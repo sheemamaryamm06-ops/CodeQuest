@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard | CODEQUEST</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+
+        <div class="logo">
+            CODEQUEST
+        </div>
+
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="dashboard.html" class="active">Dashboard</a>
+            <a href="/logout">Logout</a>
+        </div>
+
+    </nav>
+
+
+    <!-- Dashboard -->
+    <main class="dashboard">
+
+        <!-- Welcome Section -->
+        <section class="dashboard-welcome">
+
+            <div>
+                <p class="dashboard-tag">🎮 YOUR CODING ADVENTURE</p>
+
+                <h1 id="dashboardWelcome">Welcome, Coder! 👋</h1>
+
+                <p>
+                    Keep learning, complete quests, and become a
+                    <strong>CodeQuest Master.</strong>
+                </p>
+            </div>
+
+            <div class="level-badge">
+                <span>LEVEL</span>
+                <strong id="dashboardLevel">1</strong>
+            </div>
+
+        </section>
+
+
+        <!-- Statistics -->
+        <section class="stats-grid">
+
+            <div class="stat-card">
+                <div class="stat-icon">⭐</div>
+                <div>
+                    <h3 id="dashboardXp">0</h3>
+                    <p>Total XP</p>
+                </div>
+            </div>
+
+
+            <div class="stat-card">
+                <div class="stat-icon">🏆</div>
+                <div>
+                    <h3 id="dashboardBadges">0</h3>
+                    <p>Badges Earned</p>
+                </div>
+            </div>
+
+
+            <div class="stat-card">
+                <div class="stat-icon">🎯</div>
+                <div>
+                    <h3 id="dashboardLevels">0 / 30</h3>
+                    <p>Total Levels Completed</p>
+                </div>
+            </div>
+
+
+            <div class="stat-card">
+                <div class="stat-icon">🔥</div>
+                <div>
+                    <h3>0</h3>
+                    <p>Quest Streak</p>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- Progress Section -->
+        <section class="progress-section">
+
+            <div class="section-heading">
+
+                <div>
+                    <p class="dashboard-tag">📊 YOUR PROGRESS</p>
+                    <h2>Overall Coding Progress</h2>
+                </div>
+
+                <span class="progress-percentage" id="dashboardPercentage">0%</span>
+
+            </div>
+
+
+            <div class="progress-bar">
+                <div class="progress-fill" id="dashboardProgressFill"></div>
+            </div>
+
+            <p class="progress-text" id="dashboardProgressText">
+                0 of 30 levels completed across all five languages.
+            </p>
+
+            <div
+                class="language-progress-grid"
+                id="languageProgressGrid"
+                aria-label="Progress by programming language"
+            ></div>
+
+        </section>
+
+
+        <!-- Quest Map -->
+        <section class="quest-section">
+
+            <div class="section-heading">
+
+                <div>
+                    <p class="dashboard-tag">🗺️ QUEST MAP</p>
+                    <h2>Your Coding Adventure</h2>
+                </div>
+
+            </div>
+
+
+            <div class="quest-grid">
+
+                <!-- Level 1 -->
+                <div class="quest-card completed">
+
+                    <div class="quest-number">01</div>
+
+                    <div class="quest-icon">🌱</div>
+
+                    <h3>The Beginning</h3>
+
+                    <p>
+                        Variables, syntax, data types and output.
+                    </p>
+
+                    <span class="quest-status">
+                        ✓ COMPLETED
+                    </span>
+
+                </div>
+
+
+                <!-- Level 2 -->
+                <div class="quest-card completed">
+
+                    <div class="quest-number">02</div>
+
+                    <div class="quest-icon">🔐</div>
+
+                    <h3>The Gate</h3>
+
+                    <p>
+                        Operators, conditions and if/else.
+                    </p>
+
+                    <span class="quest-status">
+                        ✓ COMPLETED
+                    </span>
+
+                </div>
+
+
+                <!-- Level 3 -->
+                <div class="quest-card current">
+
+                    <div class="quest-number">03</div>
+
+                    <div class="quest-icon">🌲</div>
+
+                    <h3>The Loop Forest</h3>
+
+                    <p>
+                        Learn loops and repetition.
+                    </p>
+
+                    <span class="quest-status">
+                        ▶ CURRENT QUEST
+                    </span>
+
+                </div>
+
+
+                <!-- Level 4 -->
+                <div class="quest-card locked">
+
+                    <div class="quest-number">04</div>
+
+                    <div class="quest-icon">🏰</div>
+
+                    <h3>Function Castle</h3>
+
+                    <p>
+                        Functions, parameters and return values.
+                    </p>
+
+                    <span class="quest-status">
+                        🔒 LOCKED
+                    </span>
+
+                </div>
+
+
+                <!-- Level 5 -->
+                <div class="quest-card locked">
+
+                    <div class="quest-number">05</div>
+
+                    <div class="quest-icon">🐛</div>
+
+                    <h3>Debugging Dungeon</h3>
+
+                    <p>
+                        Find and fix coding errors.
+                    </p>
+
+                    <span class="quest-status">
+                        🔒 LOCKED
+                    </span>
+
+                </div>
+
+
+                <!-- Level 6 -->
+                <div class="quest-card locked">
+
+                    <div class="quest-number">06</div>
+
+                    <div class="quest-icon">👑</div>
+
+                    <h3>Final Challenge</h3>
+
+                    <p>
+                        Complete the ultimate coding challenge.
+                    </p>
+
+                    <span class="quest-status">
+                        🔒 LOCKED
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Continue Quest -->
+        <section class="continue-section">
+
+            <div class="continue-content">
+
+                <div>
+                    <p class="dashboard-tag">🎯 CURRENT MISSION</p>
+
+                    <h2>Guide the Robot Through the Forest</h2>
+
+                    <p>
+                        Complete the Level 3 challenges and earn
+                        <strong>+100 XP</strong>.
+                    </p>
+                </div>
+
+                <a href="languages.html" class="continue-button">
+                    🚀 Continue Quest
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- Badges -->
+        <section class="badges-section">
+
+            <div class="section-heading">
+
+                <div>
+                    <p class="dashboard-tag">🏆 REWARDS</p>
+                    <h2>Your Badges</h2>
+                </div>
+
+            </div>
+
+
+            <div class="badges-grid">
+
+                <div class="badge-card earned">
+                    <div class="badge-icon">🌱</div>
+                    <h3>First Code</h3>
+                    <p>Completed Level 1</p>
+                </div>
+
+
+                <div class="badge-card earned">
+                    <div class="badge-icon">🔐</div>
+                    <h3>Logic Master</h3>
+                    <p>Completed Level 2</p>
+                </div>
+
+
+                <div class="badge-card locked">
+                    <div class="badge-icon">🌲</div>
+                    <h3>Loop Master</h3>
+                    <p>Complete Level 3</p>
+                </div>
+
+
+                <div class="badge-card locked">
+                    <div class="badge-icon">🏰</div>
+                    <h3>Function Builder</h3>
+                    <p>Complete Level 4</p>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+
+        <p>
+            © 2026 CODEQUEST. Learn • Code • Play • Progress.
+        </p>
+
+    </footer>
+
+    <script src="app.js"></script>
+    <script>
+
+        (async function() {
+        const player = await CodeQuest.requirePlayer();
+        if (!player) return;
+
+        const selectedLanguage = player.language || "Python";
+        const languageProgress = player.language_progress || {};
+        const completedLevels = languageProgress[selectedLanguage] || [];
+        const allLanguageNames = ["Python", "C", "HTML", "JavaScript", "Java"];
+        const totalLevelCount = allLanguageNames.length * 6;
+        const completedLevelCount = allLanguageNames.reduce(function(count, language) {
+            return count + (languageProgress[language] || []).length;
+        }, 0);
+
+        if (selectedLanguage === "HTML") {
+            const htmlLevelDescriptions = [
+                "HTML elements, attributes and text content.",
+                "Semantic elements and document structure.",
+                "Links, lists, images and accessible text.",
+                "Forms, labeled controls and validation.",
+                "Markup debugging and accessibility checks.",
+                "A complete page built with semantic HTML."
+            ];
+
+            document.querySelectorAll(".quest-card p").forEach(function(description, index) {
+                description.textContent = htmlLevelDescriptions[index];
+            });
+
+            document.querySelector(".continue-content h2").textContent =
+                "Build a page with semantic structure";
+            document.querySelector(".continue-content > div > p:not(.dashboard-tag)").innerHTML =
+                "Complete the Level 3 HTML challenges and earn <strong>+100 XP</strong>.";
+        }
+
+        const completedCount = completedLevels.length;
+        const currentLevel = Math.min(completedCount + 1, 6);
+        const progressPercentage = Math.round(completedLevelCount / totalLevelCount * 100);
+        const currentUser = player.username;
+        const earnedBadgeCount = Math.min(
+            completedCount,
+            document.querySelectorAll(".badge-card").length
+        );
+
+        document.getElementById("dashboardWelcome").textContent =
+            "Welcome, " + currentUser + "! 👋";
+        document.getElementById("dashboardLevel").textContent = currentLevel;
+        document.getElementById("dashboardXp").textContent = player.xp;
+        document.getElementById("dashboardBadges").textContent = earnedBadgeCount;
+        document.getElementById("dashboardLevels").textContent =
+            completedLevelCount + " / " + totalLevelCount;
+
+        const languageMissions = selectedLanguage === "HTML"
+            ? [
+                "Explore elements and attributes",
+                "Structure a semantic page",
+                "Connect content with links and media",
+                "Create an accessible form",
+                "Inspect and repair HTML",
+                "Build a complete web page"
+            ]
+            : [
+                "Learn variables, types and output",
+                "Open the gate with conditions",
+                "Guide the robot through the loop forest",
+                "Build reusable functions",
+                "Debug the broken code",
+                "Solve the final coding challenge"
+            ];
+        document.querySelector(".continue-content h2").textContent =
+            languageMissions[currentLevel - 1];
+        document.querySelector(".continue-content > div > p:not(.dashboard-tag)").innerHTML =
+            "Complete Level " + currentLevel + " challenges and earn <strong>+100 XP</strong>.";
+
+        document.getElementById("dashboardPercentage").textContent =
+            progressPercentage + "%";
+
+        document.getElementById("dashboardProgressFill").style.width =
+            progressPercentage + "%";
+
+        document.getElementById("dashboardProgressText").textContent =
+            completedLevelCount + " of " + totalLevelCount + " levels completed across all five languages. " +
+            (completedLevelCount === 0
+                ? "Start your first language quest!"
+                : "Keep going, Coder!");
+
+        const languageProgressGrid = document.getElementById("languageProgressGrid");
+        allLanguageNames.forEach(function(language) {
+            const languageLevelCount = (languageProgress[language] || []).length;
+            const languagePercentage = Math.round(languageLevelCount / 6 * 100);
+            const card = document.createElement("article");
+            card.className = "dashboard-language-card";
+            card.dataset.language = language;
+
+            const heading = document.createElement("div");
+            heading.className = "language-progress-heading";
+            const name = document.createElement("h3");
+            name.textContent = language;
+            const count = document.createElement("span");
+            count.textContent = languageLevelCount + " / 6";
+            heading.append(name, count);
+
+            const bar = document.createElement("div");
+            bar.className = "language-progress-bar";
+            bar.setAttribute("role", "progressbar");
+            bar.setAttribute("aria-label", language + " progress");
+            bar.setAttribute("aria-valuemin", "0");
+            bar.setAttribute("aria-valuemax", "6");
+            bar.setAttribute("aria-valuenow", String(languageLevelCount));
+            const fill = document.createElement("div");
+            fill.className = "language-progress-fill";
+            fill.style.width = languagePercentage + "%";
+            bar.appendChild(fill);
+
+            const detail = document.createElement("p");
+            detail.textContent = languagePercentage + "% complete";
+            card.append(heading, bar, detail);
+            languageProgressGrid.appendChild(card);
+        });
+
+        document.querySelectorAll(".quest-card").forEach(function(card, index) {
+
+            const levelNumber = index + 1;
+            const isCompleted = completedLevels.includes(levelNumber);
+            const isCurrent = !isCompleted &&
+                levelNumber === completedCount + 1;
+
+            card.classList.remove("completed", "current", "locked");
+            card.classList.add(
+                isCompleted
+                    ? "completed"
+                    : isCurrent
+                        ? "current"
+                        : "locked"
+            );
+
+            const status = card.querySelector(".quest-status");
+            status.textContent = isCompleted
+                ? "✓ COMPLETED"
+                : isCurrent
+                    ? "▶ CURRENT QUEST"
+                    : "🔒 LOCKED";
+
+        });
+
+        document.querySelectorAll(".badge-card").forEach(function(card, index) {
+            const isEarned = completedLevels.includes(index + 1);
+            card.classList.toggle("earned", isEarned);
+            card.classList.toggle("locked", !isEarned);
+            card.querySelector("p").textContent = isEarned
+                ? "Completed Level " + (index + 1)
+                : "Complete Level " + (index + 1);
+        });
+
+        })();
+
+    </script>
+
+</body>
+
+</html>

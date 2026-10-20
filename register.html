@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Register | CODEQUEST</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+
+        <div class="logo">
+            CODEQUEST
+        </div>
+
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="index.html#how-it-works">How It Works</a>
+            <a href="login.html">Login</a>
+        </div>
+
+    </nav>
+
+
+    <!-- Registration Section -->
+    <section class="register-section">
+
+        <div class="register-container">
+
+            <div class="register-icon">
+                🚀
+            </div>
+
+            <h1>Start Your Quest!</h1>
+
+            <p class="register-subtitle">
+                Create your account and begin your coding adventure.
+            </p>
+
+
+            <!-- Registration Form -->
+            <form class="register-form" action="login.html">
+
+                <div class="form-group">
+                    <label for="username">Username</label>
+
+                    <input
+                        type="text"
+                        id="username"
+                        name="username"
+                        placeholder="Choose a username"
+                        minlength="3"
+                        maxlength="24"
+                        required
+                    >
+                </div>
+
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="Create a password"
+                        minlength="8"
+                        required
+                    >
+                </div>
+
+
+                <div class="form-group">
+                    <label for="confirm-password">Confirm Password</label>
+
+                    <input
+                        type="password"
+                        id="confirm-password"
+                        name="confirm-password"
+                        placeholder="Confirm your password"
+                        required
+                    >
+                </div>
+
+
+                <label class="terms-checkbox">
+
+                    <input type="checkbox" required>
+
+                    <span>
+                        I agree to the
+                        <a href="#">Terms & Conditions</a>
+                    </span>
+
+                </label>
+
+
+                <button type="submit" class="register-button">
+                    🎮 Create My Quest
+                </button>
+
+            </form>
+
+
+            <div class="login-link">
+
+                <p>
+                    Already have an account?
+                    <a href="login.html">Login</a>
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+
+        <p>
+            © 2026 CODEQUEST. Learn • Code • Play • Progress.
+        </p>
+
+    </footer>
+
+    <script src="app.js"></script>
+    <script>
+
+        const registerForm = document.querySelector(".register-form");
+        const confirmPassword = document.getElementById("confirm-password");
+
+        registerForm.addEventListener("submit", async function(event) {
+
+            event.preventDefault();
+
+            if (registerForm.password.value !== confirmPassword.value) {
+                alert("Passwords do not match.");
+                return;
+            }
+
+            try {
+                await CodeQuest.api("/api/register", {
+                    method: "POST",
+                    body: JSON.stringify({
+                        username: registerForm.username.value.trim(),
+                        password: registerForm.password.value
+                    })
+                });
+                window.location.href = "login.html";
+            } catch (error) {
+                alert(error.message);
+            }
+
+        });
+
+    </script>
+
+</body>
+
+</html>

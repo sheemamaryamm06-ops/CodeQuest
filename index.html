@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CODEQUEST | Learn. Code. Play.</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header class="navbar">
+
+        <div class="logo">
+            CODE<span>QUEST</span>
+        </div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#how-it-works">How It Works</a>
+            <a href="login.html" class="login-btn">Login</a>
+        </nav>
+
+    </header>
+
+
+    <!-- Hero Section -->
+    <main>
+
+        <section class="hero" id="home">
+
+            <div class="hero-content">
+
+                <p class="tagline">
+                    🎮 LEARN • CODE • PLAY • PROGRESS
+                </p>
+
+                <h1>
+                    Turn Coding Into
+                    <span>An Adventure.</span>
+                </h1>
+
+                <p class="description">
+                    Learn programming concepts, complete exciting quests,
+                    earn XP, unlock levels and become a CodeQuest Master.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="register.html" class="primary-btn" id="startQuestButton">
+                        🚀 Start Your Quest
+                    </a>
+
+                    <a href="#how-it-works" class="secondary-btn">
+                        Explore
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- Game Preview -->
+            <div class="game-preview">
+
+                <div class="game-card">
+
+                    <div class="game-header">
+                        <span>CODEQUEST</span>
+                        <span>⭐ 0 XP</span>
+                    </div>
+
+                    <div class="quest">
+
+                        <div class="quest-icon">
+                            🎯
+                        </div>
+
+                        <div>
+                            <strong>Current Quest</strong>
+                            <p>Learn variables, syntax, data and output.</p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- How It Works -->
+        <section class="features" id="how-it-works">
+
+            <p class="section-tag">
+                HOW IT WORKS
+            </p>
+
+            <h2>
+                Your Coding Adventure
+            </h2>
+
+            <p class="section-description">
+                Learn programming by completing quests instead of
+                simply reading lessons.
+            </p>
+
+
+            <div class="feature-container">
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+                        📚
+                    </div>
+
+                    <h3>Learn</h3>
+
+                    <p>
+                        Understand programming concepts through
+                        simple and interactive lessons.
+                    </p>
+
+                </div>
+
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+                        🎯
+                    </div>
+
+                    <h3>Challenge</h3>
+
+                    <p>
+                        Solve coding challenges to complete
+                        your missions.
+                    </p>
+
+                </div>
+
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+                        🏆
+                    </div>
+
+                    <h3>Progress</h3>
+
+                    <p>
+                        Earn XP, unlock levels and collect
+                        achievement badges.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <div class="logo">
+            CODE<span>QUEST</span>
+        </div>
+
+        <p>
+            Learn. Code. Play. Progress.
+        </p>
+
+        <small>
+            © 2026 CODEQUEST
+        </small>
+
+    </footer>
+
+
+    <script src="app.js"></script>
+    <script>
+
+        document.getElementById("startQuestButton").addEventListener(
+            "click",
+            async function(event) {
+
+                event.preventDefault();
+
+                try {
+                    const player = await CodeQuest.currentPlayer();
+                    window.location.href = player ? "dashboard.html" : "register.html";
+                } catch (error) {
+                    alert("Could not connect to the CodeQuest server. Start it with: python server.py");
+                }
+
+            }
+        );
+
+    </script>
+
+</body>
+</html>

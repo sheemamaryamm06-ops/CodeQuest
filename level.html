@@ -1,0 +1,1144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Level 1 | CODEQUEST</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- ============================= -->
+    <!-- NAVIGATION -->
+    <!-- ============================= -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            CODEQUEST
+        </div>
+
+        <div class="nav-links">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="dashboard.html">
+                Dashboard
+            </a>
+
+            <a href="game-map.html">
+                Quest Map
+            </a>
+
+            <a href="/logout">
+                Logout
+            </a>
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- ============================= -->
+    <!-- LEVEL PAGE -->
+    <!-- ============================= -->
+
+    <main class="level-page">
+
+
+        <!-- LEVEL HEADER -->
+
+        <section class="level-header">
+
+            <div class="level-title-icon">
+                🌱
+            </div>
+
+            <div>
+
+                <span class="level-label">
+                    LEVEL 01
+                </span>
+
+                <h1>
+                    The Beginning
+                </h1>
+
+                <p>
+                    Learn the building blocks of programming.
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ============================= -->
+        <!-- PROGRESS -->
+        <!-- ============================= -->
+
+        <section class="level-progress">
+
+            <div class="progress-info">
+
+                <span>
+                    LEVEL PROGRESS
+                </span>
+
+                <strong id="progressText">
+                    0%
+                </strong>
+
+            </div>
+
+            <div class="level-progress-bar">
+
+                <div
+                    class="level-progress-fill"
+                    id="progressFill"
+                ></div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ============================= -->
+        <!-- LEARNING SECTION -->
+        <!-- ============================= -->
+
+        <section class="learning-card">
+
+            <div class="learning-badge">
+                📖 LEARN
+            </div>
+
+            <h2 id="learningTitle">
+                What is a Variable?
+            </h2>
+
+            <p id="learningDescription">
+                A variable is a named storage location used
+                to store a value in a program.
+            </p>
+
+
+            <section class="syntax-section" aria-labelledby="syntaxHeading">
+
+                <div class="syntax-heading">
+                    <span class="syntax-label">🧠 REMEMBER THIS</span>
+                    <h2 id="syntaxHeading">Flip the card to reveal the syntax</h2>
+                    <p>Study the example, then remember it to unlock the challenge.</p>
+                </div>
+
+                <div class="syntax-card-container">
+                    <button
+                        class="syntax-card"
+                        id="syntaxCard"
+                        type="button"
+                        aria-label="Flip the CODEQUEST card to reveal the syntax"
+                        aria-pressed="false"
+                    >
+                        <span class="syntax-card-inner">
+                            <span class="syntax-card-face syntax-card-front" aria-hidden="false">
+                                <img
+                                    src="codequest-card.png"
+                                    alt=""
+                                    class="codequest-card-image"
+                                >
+                                <span class="card-image-overlay"></span>
+                                <span class="card-front-content">
+                                    <span class="card-front-badge">🧠 MEMORY QUEST</span>
+                                    <span class="card-front-title">Learn the Syntax</span>
+                                    <span class="card-front-description">Remember the example before the timer runs out.</span>
+                                    <span class="flip-hint">↻ CLICK TO FLIP</span>
+                                </span>
+                            </span>
+
+                            <span class="syntax-card-face syntax-card-back" aria-hidden="true">
+                                <span class="syntax-topic" id="syntaxTopic">PYTHON SYNTAX</span>
+                                <span class="memory-timer">
+                                    <span>⏱ REMEMBER FOR</span>
+                                    <strong id="memoryTimer">15</strong>
+                                    <span>SECONDS</span>
+                                </span>
+                                <span class="syntax-code">
+                                    <code id="learningCode">x = 10
+name = "Coder"
+
+print(x)
+print(name)</code>
+                                </span>
+                                <span class="syntax-explanation" id="syntaxExplanation">
+                                    Study how this example uses the current concept.
+                                </span>
+                                <span class="remember-badge">🧠 MEMORIZE THIS</span>
+                            </span>
+                        </span>
+                    </button>
+                </div>
+
+                <button
+                    class="remember-button"
+                    id="rememberButton"
+                    type="button"
+                    disabled
+                >
+                    🧠 I Remembered
+                </button>
+
+                <p class="flip-message" id="flipMessage" aria-live="polite">
+                    Flip the card to start the memory challenge.
+                </p>
+
+            </section>
+
+            <div class="learning-note">
+
+                💡 <strong>Remember:</strong>
+                <span id="learningNote">A variable can store different types of information such as numbers and text.</span>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ============================= -->
+        <!-- CHALLENGE -->
+        <!-- ============================= -->
+
+        <section class="challenge-card locked-challenge" id="challengeCard">
+
+            <div class="challenge-lock" id="challengeLock">
+                <div class="lock-icon">🔒</div>
+                <h3>Challenge Locked</h3>
+                <p>Flip the syntax card and remember the example to unlock the questions.</p>
+            </div>
+
+            <div class="challenge-content" id="challengeContent" hidden>
+
+                <div class="challenge-top">
+
+                    <div>
+
+                        <span class="challenge-label" id="challengeLabel">
+                            🎯 QUESTION 01 OF 03
+                        </span>
+
+                        <h2 id="challengeTitle">
+                            The Crystal Challenge
+                        </h2>
+
+                    </div>
+
+                    <div class="challenge-xp">
+                        ⭐ +100 XP
+                    </div>
+
+                </div>
+
+
+                <p class="challenge-question" id="challengeQuestion">
+                    The gatekeeper gives you this code:
+                </p>
+
+
+                <div class="challenge-code">
+
+                    <pre><code id="challengeCode">x = 10
+y = 20
+print(x + y)</code></pre>
+
+                </div>
+
+
+                <p class="question-text" id="questionText">
+                    What will the program print?
+                </p>
+
+
+                <!-- OPTIONS -->
+
+                <div class="answer-options" id="answerOptions">
+                </div>
+
+
+                <!-- RESULT MESSAGE -->
+
+                <div
+                    class="answer-result"
+                    id="answerResult"
+                ></div>
+
+
+                <!-- CHECK BUTTON -->
+
+                <button
+                    class="check-answer-button"
+                    id="checkAnswer"
+                >
+                    Check Answer
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ============================= -->
+        <!-- XP REWARD -->
+        <!-- ============================= -->
+
+        <section
+            class="xp-reward"
+            id="xpReward"
+        >
+
+            <div class="reward-icon">
+                ⭐
+            </div>
+
+            <div>
+
+                <span>
+                    CHALLENGE COMPLETE
+                </span>
+
+                <h2>
+                    +100 XP Earned!
+                </h2>
+
+                <p>
+                    You collected your first coding crystal.
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ============================= -->
+        <!-- NEXT LEVEL -->
+        <!-- ============================= -->
+
+        <section
+            class="next-level"
+            id="nextLevel"
+        >
+
+            <div>
+
+                <span>
+                    QUEST COMPLETE
+                </span>
+
+                <h2>
+                    🌱 The Beginning Completed!
+                </h2>
+
+                <p>
+                    You've taken your first step into
+                    the world of coding.
+                </p>
+
+            </div>
+
+            <button
+                id="nextLevelButton"
+            >
+                🔐 Unlock Level 2
+            </button>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- ============================= -->
+    <!-- FOOTER -->
+    <!-- ============================= -->
+
+    <footer class="footer">
+
+        <p>
+            © 2026 CODEQUEST.
+            Learn • Code • Play • Progress.
+        </p>
+
+    </footer>
+
+
+
+    <!-- ============================= -->
+    <!-- JAVASCRIPT -->
+    <!-- ============================= -->
+
+    <script src="app.js"></script>
+    <script>
+
+        (async function() {
+        const player = await CodeQuest.requirePlayer();
+        if (!player) return;
+
+        const currentLevel = Number(
+            new URLSearchParams(window.location.search).get("level") || "1"
+        );
+
+        const selectedLanguage = player.language || "Python";
+        const languageProgress = player.language_progress || {};
+        const completedLevels = languageProgress[selectedLanguage] || [];
+
+        const levelDataByLanguage = {
+            Python: [
+                {
+                    name: "The Beginning",
+                    icon: "🐍",
+                    summary: "Learn Python variables, values and output.",
+                    title: "Variables, Types and Output",
+                    description: "Python stores values in variables and prints results with print().",
+                    code: "score = 10\nname = \"Coder\"\nprint(score)\nprint(name)",
+                    note: "A variable stores a value, and print() shows the result in the terminal.",
+                    questions: [
+                        { prompt: "Which Python concept stores a value that can change?", code: "score = 10", options: ["A variable", "A comment", "A loop", "A function"], answer: 0 },
+                        { prompt: "Which value is text in Python?", code: "name = \"Coder\"", options: ["10", "True", "\"Coder\"", "score"], answer: 2 },
+                        { prompt: "What does print() do?", code: "print(score)", options: ["Stops the program", "Displays output", "Deletes a variable", "Changes a type"], answer: 1 }
+                    ]
+                },
+                {
+                    name: "The Gate",
+                    icon: "🔐",
+                    summary: "Use Python conditions and comparisons.",
+                    title: "Operators and Decisions",
+                    description: "Use comparison operators and if/else to make Python choose a path.",
+                    code: "score = 75\nif score >= 50:\n    print(\"Pass\")\nelse:\n    print(\"Try again\")",
+                    note: "A condition becomes True or False, and Python runs the matching branch.",
+                    questions: [
+                        { prompt: "Which operator checks if one value is larger?", code: "8 > 3", options: [">", "==", "+", "and"], answer: 0 },
+                        { prompt: "What happens when an if condition is true?", code: "if score >= 50:\n    print(\"Pass\")", options: ["The if block runs", "The variable is removed", "The loop ends", "The code is ignored"], answer: 0 },
+                        { prompt: "What is else used for?", code: "if score >= 50:\n    print(\"Pass\")\nelse:\n    print(\"Retry\")", options: ["The alternative branch", "A new variable", "A comment", "A multiplication step"], answer: 0 }
+                    ]
+                },
+                {
+                    name: "The Loop Forest",
+                    icon: "🌲",
+                    summary: "Repeat actions with Python loops.",
+                    title: "Loops and Repetition",
+                    description: "Use for loops to repeat steps efficiently in Python.",
+                    code: "for step in range(3):\n    print(\"Move forward\")",
+                    note: "range(3) gives 0, 1, and 2, so the loop body runs three times.",
+                    questions: [
+                        { prompt: "Why do programmers use loops?", code: "for step in range(3):\n    print(\"Move\")", options: ["To repeat code", "To hide output", "To rename files", "To stop debugging"], answer: 0 },
+                        { prompt: "How many times does range(3) run?", code: "for step in range(3):", options: ["1", "2", "3", "4"], answer: 2 },
+                        { prompt: "Which part of a loop usually changes?", code: "while energy > 0:\n    run()", options: ["The condition", "The file name", "The image tag", "The heading"], answer: 0 }
+                    ]
+                },
+                {
+                    name: "Function Castle",
+                    icon: "🏰",
+                    summary: "Build reusable Python functions.",
+                    title: "Functions and Reuse",
+                    description: "Write functions to reuse code and pass values through parameters.",
+                    code: "def greet(name):\n    return \"Hi, \" + name\n\nprint(greet(\"Coder\"))",
+                    note: "Parameters receive input, and return sends a result back to the caller.",
+                    questions: [
+                        { prompt: "What is a Python function?", code: "def greet():\n    return \"Hi\"", options: ["A reusable block of code", "A file type", "A loop value", "A CSS class"], answer: 0 },
+                        { prompt: "What is a parameter?", code: "def greet(name):", options: ["A value passed into a function", "A repeated loop", "A heading tag", "A condition"], answer: 0 },
+                        { prompt: "What does return do?", code: "return total", options: ["Sends a result back", "Deletes the function", "Creates a new file", "Prints HTML"], answer: 0 }
+                    ]
+                },
+                {
+                    name: "Debugging Dungeon",
+                    icon: "🐛",
+                    summary: "Find and fix Python errors.",
+                    title: "Debugging and Errors",
+                    description: "Use error messages and tests to locate and correct a problem.",
+                    code: "score = 10\nprint(score)\n# Check the value shown",
+                    note: "Debugging means reproduce, inspect, fix, and test the issue again.",
+                    questions: [
+                        { prompt: "What is debugging?", code: "find_error()\nfix_error()", options: ["Finding and fixing a problem", "Changing the screen color", "Writing HTML", "Deleting files"], answer: 0 },
+                        { prompt: "What should you read first after an error?", code: "TypeError: ...", options: ["The error message", "The footer text", "The page title", "The CSS color"], answer: 0 },
+                        { prompt: "Why test after fixing code?", code: "fix()\ntest()", options: ["To confirm the issue is solved", "To hide the function", "To stop the loop", "To create a comment"], answer: 0 }
+                    ]
+                },
+                {
+                    name: "Final Challenge",
+                    icon: "👑",
+                    summary: "Combine all Python ideas into one solution.",
+                    title: "Build a Complete Solution",
+                    description: "Use variables, decisions, loops, and functions together to solve a real challenge.",
+                    code: "def guide(steps):\n    for step in steps:\n        if step:\n            print(\"Move\")\n\nguide([True, False, True])",
+                    note: "Strong Python programs are built from simple parts working together.",
+                    questions: [
+                        { prompt: "Which Python structure stores several values?", code: "steps = [1, 2, 3]", options: ["A list", "A condition", "A loop", "A tag"], answer: 0 },
+                        { prompt: "Which tool repeats work in Python?", code: "for step in steps:", options: ["A loop", "A comment", "A variable", "A link"], answer: 0 },
+                        { prompt: "What is the best final step before finishing a task?", code: "build()\ntest()", options: ["Test the full solution", "Delete the code", "Hide the result", "Rename the file"], answer: 0 }
+                    ]
+                }
+            ],
+            C: [
+                {
+                    name: "Memory Basics",
+                    icon: "🧠",
+                    summary: "Learn C variables and data types.",
+                    title: "Variables and Types",
+                    description: "C needs explicit variable types before you can store and print values.",
+                    code: "#include <stdio.h>\n\nint main(void) {\n    int score = 10;\n    printf(\"%d\\n\", score);\n    return 0;\n}",
+                    note: "In C, int stores whole numbers and printf() outputs them with the correct format.",
+                    questions: [
+                        { prompt: "What does int mean in C?", code: "int score = 10;", options: ["An integer variable", "A file name", "A function", "A link"], answer: 0 },
+                        { prompt: "What does printf() do?", code: "printf(\"%d\\n\", score);", options: ["Prints output to the console", "Creates a loop", "Tests HTML", "Deletes memory"], answer: 0 },
+                        { prompt: "Why do C variables need declared types?", code: "int score;", options: ["To reserve the correct memory size", "To hide the code", "To create a comment", "To build a browser"], answer: 0 }
+                    ]
+                },
+                {
+                    name: "Decision Gate",
+                    icon: "🔐",
+                    summary: "Use comparison and if/else in C.",
+                    title: "Conditions and Branches",
+                    description: "C uses comparison checks in if statements to decide which block to run.",
+                    code: "#include <stdio.h>\n\nint main(void) {\n    int score = 75;\n    if (score >= 50) {\n        printf(\"Pass\\n\");\n    } else {\n        printf(\"Try again\\n\");\n    }\n}",
+                    note: "The condition is checked, and the matching block executes.",
+                    questions: [
+                        { prompt: "Which symbol checks greater-than-or-equal in C?", code: "score >= 50", options: [">=", "==", "!=", "<"], answer: 0 },
+                        { prompt: "What is the purpose of else?", code: "if (score >= 50) { ... } else { ... }", options: ["Runs when the condition is false", "Deletes the variable", "Stops the loop", "Creates output"], answer: 0 },
+                        { prompt: "Which code block executes when a condition is true?", code: "if (ready) { ... }", options: ["The if block", "The footer", "The variable list", "The comment"], answer: 0 }
+                    ]
+                },
+                {
+                    name: "Loop Trail",
+                    icon: "🌲",
+                    summary: "Repeat steps with C loops.",
+                    title: "Loops and Repetition",
+                    description: "Use for loops to repeat code until a condition changes.",
+                    code: "#include <stdio.h>\n\nint main(void) {\n    for (int step = 0; step < 3; step++) {\n        printf(\"Move forward\\n\");\n    }\n}",
+                    note: "The loop runs while the condition is true and updates after each pass.",
+                    questions: [
+                        { prompt: "What does the third part of a for loop usually do?", code: "for (int step = 0; step < 3; step++)", options: ["Updates the counter", "Writes CSS", "Creates a label", "Deletes the array"], answer: 0 },
+                        { prompt: "Why use a loop in C?", code: "for (...) { ... }", options: ["To repeat instructions", "To choose a file", "To format HTML", "To stop output"], answer: 0 },
+                        { prompt: "How many times does step < 3 run?", code: "for (int step = 0; step < 3; step++)", options: ["3 times", "2 times", "1 time", "Never"], answer: 0 }
+                    ]
+                },
+                {
+                    name: "Function Forge",
+                    icon: "🏰",
+                    summary: "Create reusable functions in C.",
+                    title: "Functions and Return Values",
+                    description: "Functions in C have a return type, parameters, and a value to send back.",
+                    code: "#include <stdio.h>\n\nint add(int first, int second) {\n    return first + second;\n}\n\nint main(void) {\n    printf(\"%d\\n\", add(2, 3));\n}",
+                    note: "The return type declares what the function will send back.",
+                    questions: [
+                        { prompt: "What is a function in C?", code: "int add(int a, int b)", options: ["A reusable block of logic", "A file extension", "An HTML tag", "A variable name"], answer: 0 },
+                        { prompt: "What do parameters do?", code: "add(int first, int second)", options: ["Receive input values", "Add comments", "Define CSS", "Break loops"], answer: 0 },
+                        { prompt: "What does return do?", code: "return first + second;", options: ["Sends a computed value back", "Stops the browser", "Creates a page", "Deletes the function"], answer: 0 }
+                    ]
+                },
+                {
+                    name: "Bug Watch",
+                    icon: "🐛",
+                    summary: "Fix compiler and runtime errors.",
+                    title: "Debugging C Programs",
+                    description: "Read compiler messages and test small fixes to correct issues.",
+                    code: "#include <stdio.h>\n\nint main(void) {\n    int score = 10;\n    printf(\"%d\\n\", score);\n    return 0;\n}",
+                    note: "Compiler errors often point directly to the bad line or mismatched type.",
+                    questions: [
+                        { prompt: "What is debugging?", code: "find_bug(); fix_bug();", options: ["Finding and fixing errors", "Changing the title", "Creating a new file", "Writing CSS"], answer: 0 },
+                        { prompt: "What should you check first when the compiler reports an error?", code: "error: expected ';' before '}'", options: ["The reported line", "The browser title", "The HTML form", "The CSS color"], answer: 0 },
+                        { prompt: "Why test again after a fix?", code: "fix(); test();", options: ["To confirm the issue is resolved", "To skip compilation", "To add comments", "To rename tags"], answer: 0 }
+                    ]
+                },
+                {
+                    name: "Final Sprint",
+                    icon: "👑",
+                    summary: "Solve the full C quest.",
+                    title: "Complete the C Challenge",
+                    description: "Combine variables, decisions, loops, and functions into one working solution.",
+                    code: "#include <stdio.h>\n\nint is_ready(int step) {\n    return step > 0;\n}\n\nint main(void) {\n    for (int step = 0; step < 3; step++) {\n        if (is_ready(step)) printf(\"Move\\n\");\n    }\n}",
+                    note: "A complete C program combines small valid building blocks into one solution.",
+                    questions: [
+                        { prompt: "Which construct checks a condition repeatedly?", code: "if (ready) { ... }", options: ["if statement", "function", "array", "link"], answer: 0 },
+                        { prompt: "Which feature repeats work?", code: "for (...) { ... }", options: ["Loop", "header", "label", "variable"], answer: 0 },
+                        { prompt: "What is the final step before finishing?", code: "compile(); test();", options: ["Test the result", "Delete the code", "Skip checks", "Rename variables"], answer: 0 }
+                    ]
+                }
+            ],
+            HTML: [
+                {
+                    name: "Tag Start",
+                    icon: "🌐",
+                    summary: "Learn HTML elements and text.",
+                    title: "Elements and Content",
+                    description: "HTML uses tags to mark headings, paragraphs, and other page content.",
+                    code: "<h1>My Quest</h1>\n<p>Learn by building.</p>",
+                    note: "Elements give meaning to content and structure to a page.",
+                    questions: [
+                        { prompt: "What does an HTML element describe?", code: "<h1>Quest</h1>", options: ["A piece of page content", "A JavaScript loop", "A database query", "A variable value"], answer: 0 },
+                        { prompt: "Which tag creates a main heading?", code: "<h1>CodeQuest</h1>", options: ["<h1>", "<div>", "<img>", "<button>"], answer: 0 },
+                        { prompt: "What is text inside a paragraph called?", code: "<p>Learn</p>", options: ["Content", "Function", "Condition", "Statement"], answer: 0 }
+                    ]
+                },
+                {
+                    name: "Structure Map",
+                    icon: "🧭",
+                    summary: "Organize page regions semantically.",
+                    title: "Semantic Page Structure",
+                    description: "Use meaningful HTML sections like header, main, and footer.",
+                    code: "<header><h1>CodeQuest</h1></header>\n<main><p>Choose a quest.</p></main>\n<footer>End</footer>",
+                    note: "Semantic tags help both users and browsers understand the page.",
+                    questions: [
+                        { prompt: "Which element should contain the main page content?", code: "<main>...</main>", options: ["<main>", "<img>", "<button>", "<title>"], answer: 0 },
+                        { prompt: "What does <header> usually hold?", code: "<header> ... </header>", options: ["Introductory page content", "A loop", "A function", "A database value"], answer: 0 },
+                        { prompt: "Why use semantic tags?", code: "<section> ... </section>", options: ["To describe page meaning clearly", "To hide text", "To write code", "To create variables"], answer: 0 }
+                    ]
+                },
+                {
+                    name: "Linking Path",
+                    icon: "🔗",
+                    summary: "Connect pages and content with links.",
+                    title: "Links, Lists and Media",
+                    description: "Hyperlinks, lists, and images help users move through and understand a page.",
+                    code: "<a href=\"map.html\">Quest Map</a>\n<ul><li>Learn</li><li>Build</li></ul>",
+                    note: "href sets a destination, and alt text makes images accessible.",
+                    questions: [
+                        { prompt: "Which attribute sets the destination of a link?", code: "<a href=\"page.html\">", options: ["href", "alt", "class", "id"], answer: 0 },
+                        { prompt: "Which tags create a list?", code: "<ul><li>One</li></ul>", options: ["<ul> and <li>", "<h1> and <p>", "<main> and <header>", "<form> and <button>"], answer: 0 },
+                        { prompt: "Why add alt text to an image?", code: "<img src=\"pic.png\" alt=\"Map\">", options: ["So non-visual users understand it", "To hide it", "To repeat content", "To create a loop"], answer: 0 }
+                    ]
+                },
+                {
+                    name: "Form Entry",
+                    icon: "📝",
+                    summary: "Collect user input with HTML forms.",
+                    title: "Forms and Input",
+                    description: "Forms gather data, and labels explain each field clearly.",
+                    code: "<form>\n  <label for=\"player\">Name</label>\n  <input id=\"player\" required>\n</form>",
+                    note: "A label connects to an input and helps users understand its purpose.",
+                    questions: [
+                        { prompt: "What does a form collect?", code: "<form>...</form>", options: ["User input", "Database data", "JavaScript code", "CSS rules"], answer: 0 },
+                        { prompt: "What does the required attribute do?", code: "<input required>", options: ["It requires a value before submission", "It hides the field", "It deletes content", "It adds a loop"], answer: 0 },
+                        { prompt: "How does a label help?", code: "<label for=\"player\">Name</label>", options: ["It describes the related input", "It starts a function", "It creates a loop", "It outputs data"], answer: 0 }
+                    ]
+                },
+                {
+                    name: "Markup Debug",
+                    icon: "🐛",
+                    summary: "Inspect and fix HTML issues.",
+                    title: "Inspecting and Fixing HTML",
+                    description: "Check structure, nesting, and accessibility to fix broken markup.",
+                    code: "<main>\n  <h1>Quest Status</h1>\n  <img src=\"badge.png\" alt=\"Quest complete\">\n</main>",
+                    note: "Good HTML is readable, valid, and accessible.",
+                    questions: [
+                        { prompt: "What is a good first step when a page looks wrong?", code: "Browser output", options: ["Inspect the HTML structure", "Delete the page", "Rename the file", "Change the font"], answer: 0 },
+                        { prompt: "Why should images use alt text?", code: "<img alt=\"Map\">", options: ["To describe the image for non-visual users", "To create a section", "To color the image", "To hide it"], answer: 0 },
+                        { prompt: "What can a validator help find?", code: "HTML validation", options: ["Broken or invalid markup", "JavaScript bugs", "Loop errors", "CSS colors"], answer: 0 }
+                    ]
+                },
+                {
+                    name: "Full Web Build",
+                    icon: "👑",
+                    summary: "Create a complete HTML page.",
+                    title: "Build a Complete Web Page",
+                    description: "Combine sections, links, and form elements into one polished page.",
+                    code: "<!doctype html>\n<html lang=\"en\">\n  <head>\n    <title>Quest</title>\n  </head>\n  <body>\n    <header><h1>CodeQuest</h1></header>\n    <main><p>Choose your path.</p></main>\n  </body>\n</html>",
+                    note: "A complete page includes metadata, structure, and visible content.",
+                    questions: [
+                        { prompt: "Where should visible page content live?", code: "<body> ... </body>", options: ["Inside the body", "Inside the title", "Inside the doctype", "Inside a function"], answer: 0 },
+                        { prompt: "What does lang=\"en\" say?", code: "<html lang=\"en\">", options: ["The document's language", "The page's file size", "The CSS color", "The form data"], answer: 0 },
+                        { prompt: "Which element holds metadata like the title?", code: "<head> ... </head>", options: ["<head>", "<main>", "<button>", "<section>"], answer: 0 }
+                    ]
+                }
+            ],
+            JavaScript: [
+                {
+                    name: "Value Vault",
+                    icon: "📦",
+                    summary: "Learn JavaScript variables and output.",
+                    title: "Variables and Console Output",
+                    description: "JavaScript stores values in variables and prints them with console.log().",
+                    code: "const name = \"Coder\";\nlet score = 10;\nconsole.log(name);\nconsole.log(score);",
+                    note: "const keeps a fixed binding, while let is for values that change.",
+                    questions: [
+                        { prompt: "Which keyword creates a binding that should not be reassigned?", code: "const total = 5;", options: ["const", "if", "for", "return"], answer: 0 },
+                        { prompt: "What is console.log() for?", code: "console.log(\"Hello\");", options: ["Print output to the console", "Add a new page", "Create a variable", "Write HTML"], answer: 0 },
+                        { prompt: "Which value is a text string?", code: "const message = \"Hi\";", options: ["\"Hi\"", "10", "true", "if"], answer: 0 }
+                    ]
+                },
+                {
+                    name: "Decision Path",
+                    icon: "🔐",
+                    summary: "Use conditions to make choices.",
+                    title: "If Statements and Conditions",
+                    description: "JavaScript checks a condition and runs the matching block.",
+                    code: "const score = 75;\nif (score >= 50) {\n  console.log(\"Pass\");\n} else {\n  console.log(\"Try again\");\n}",
+                    note: "Conditions evaluate to true or false before the branch executes.",
+                    questions: [
+                        { prompt: "Which operator checks equality in JavaScript?", code: "score === 75", options: ["===", "=", "=>", "==="], answer: 0 },
+                        { prompt: "When does the else block run?", code: "if (score >= 50) { ... } else { ... }", options: ["When the condition is false", "When the console logs", "When the page loads", "When a function returns"], answer: 0 },
+                        { prompt: "What is a condition?", code: "if (ready) { ... }", options: ["A true or false test", "A comment", "A CSS rule", "A heading tag"], answer: 0 }
+                    ]
+                },
+                {
+                    name: "Loop Trail",
+                    icon: "🌲",
+                    summary: "Repeat work with loops.",
+                    title: "Loops and Repetition",
+                    description: "Use for loops to run the same block multiple times.",
+                    code: "for (let step = 0; step < 3; step++) {\n  console.log(\"Move forward\");\n}",
+                    note: "The counter starts, checks the condition, and updates after each pass.",
+                    questions: [
+                        { prompt: "What is the loop counter for?", code: "for (let step = 0; step < 3; step++)", options: ["Tracks how many times the loop runs", "Creates a link", "Sets page color", "Deletes the function"], answer: 0 },
+                        { prompt: "How many times does this loop run?", code: "for (let i = 0; i < 3; i++)", options: ["3 times", "2 times", "1 time", "Never"], answer: 0 },
+                        { prompt: "Why use loops?", code: "for (...) { ... }", options: ["To repeat actions efficiently", "To style text", "To create comments", "To hide HTML"], answer: 0 }
+                    ]
+                },
+                {
+                    name: "Function Forge",
+                    icon: "🏰",
+                    summary: "Build reusable JavaScript functions.",
+                    title: "Functions and Reuse",
+                    description: "Functions accept values, do work, and return the result.",
+                    code: "function greet(name) {\n  return `Hi, ${name}`;\n}\nconsole.log(greet(\"Coder\"));",
+                    note: "Parameters receive input and return sends it back to the caller.",
+                    questions: [
+                        { prompt: "What is a function parameter?", code: "function greet(name) { }", options: ["A value passed into the function", "A loop condition", "A CSS class", "A form label"], answer: 0 },
+                        { prompt: "What does return do?", code: "return result;", options: ["Sends a value back to the caller", "Creates a loop", "Deletes a variable", "Writes HTML"], answer: 0 },
+                        { prompt: "Why use functions?", code: "function greet() { ... }", options: ["To reuse code", "To remove variables", "To change page title", "To replace comments"], answer: 0 }
+                    ]
+                },
+                {
+                    name: "Bug Watch",
+                    icon: "🐛",
+                    summary: "Fix JavaScript errors.",
+                    title: "Debugging JavaScript",
+                    description: "Inspect console errors and values to find the bug and test the fix.",
+                    code: "const score = 10;\nconsole.log(score);\n// Inspect in the console",
+                    note: "A browser console is one of the fastest ways to debug JavaScript.",
+                    questions: [
+                        { prompt: "What is debugging in JavaScript?", code: "fixBug();", options: ["Finding and correcting errors", "Changing the file name", "Creating CSS", "Deleting loops"], answer: 0 },
+                        { prompt: "Where do browser errors usually appear?", code: "console.log()", options: ["The console", "The page title", "The doctype", "The form label"], answer: 0 },
+                        { prompt: "Why test after a fix?", code: "fix(); test();", options: ["To confirm the issue is solved", "To stop the code", "To create variables", "To hide output"], answer: 0 }
+                    ]
+                },
+                {
+                    name: "Final Quest",
+                    icon: "👑",
+                    summary: "Combine JavaScript skills in one final challenge.",
+                    title: "Build a Complete Solution",
+                    description: "Use data, conditions, loops, and functions together to complete the quest.",
+                    code: "function guide(steps) {\n  for (const step of steps) {\n    if (step.ready) {\n      console.log(\"Move\");\n    }\n  }\n}\n\nguide([{ ready: true }]);",
+                    note: "A good JavaScript program is readable, testable, and reusable.",
+                    questions: [
+                        { prompt: "Which JavaScript structure stores multiple values?", code: "const steps = [1, 2, 3];", options: ["An array", "A heading", "A form", "A function"], answer: 0 },
+                        { prompt: "Which tool repeats code in JavaScript?", code: "for (...) { ... }", options: ["A loop", "A label", "A tag", "A condition"], answer: 0 },
+                        { prompt: "What is the final best practice before finishing?", code: "build(); test();", options: ["Test the whole solution", "Discard the problem", "Delete the array", "Hide the console"], answer: 0 }
+                    ]
+                }
+            ],
+            Java: [
+                {
+                    name: "Type Start",
+                    icon: "☕",
+                    summary: "Learn Java variables and output.",
+                    title: "Variables and Output",
+                    description: "Java requires variable types before storing values and printing them.",
+                    code: "public class Main {\n    public static void main(String[] args) {\n        int score = 10;\n        String name = \"Coder\";\n        System.out.println(score);\n        System.out.println(name);\n    }\n}",
+                    note: "int stores whole numbers; String stores text.",
+                    questions: [
+                        { prompt: "Which data type stores a whole number in Java?", code: "int score = 10;", options: ["int", "String", "char", "double"], answer: 0 },
+                        { prompt: "What does System.out.println() do?", code: "System.out.println(\"Hi\");", options: ["Prints text to the console", "Makes a page", "Creates a loop", "Declares a variable"], answer: 0 },
+                        { prompt: "Why declare a type in Java?", code: "String name = \"Coder\";", options: ["To define the kind of value stored", "To create a page", "To hide code", "To repeat output"], answer: 0 }
+                    ]
+                },
+                {
+                    name: "Decision Gate",
+                    icon: "🔐",
+                    summary: "Use conditions and branches.",
+                    title: "Operators and Decisions",
+                    description: "Java checks conditions and executes the matching if or else block.",
+                    code: "int score = 75;\nif (score >= 50) {\n    System.out.println(\"Pass\");\n} else {\n    System.out.println(\"Try again\");\n}",
+                    note: "The comparison produces a boolean result, which decides the branch.",
+                    questions: [
+                        { prompt: "Which operator checks greater-than-or-equal in Java?", code: "score >= 50", options: [">=", "==", "!=", "<"], answer: 0 },
+                        { prompt: "When does the else block run?", code: "if (score >= 50) { ... } else { ... }", options: ["When the condition is false", "When a method ends", "When a loop repeats", "When a file loads"], answer: 0 },
+                        { prompt: "What is a boolean condition?", code: "if (ready) { ... }", options: ["A true or false test", "A CSS class", "A type name", "A return value"], answer: 0 }
+                    ]
+                },
+                {
+                    name: "Loop Path",
+                    icon: "🌲",
+                    summary: "Repeat work with for loops.",
+                    title: "Loops and Repetition",
+                    description: "Java loops allow you to repeat a task a set number of times.",
+                    code: "for (int step = 0; step < 3; step++) {\n    System.out.println(\"Move forward\");\n}",
+                    note: "The loop starts at 0, stops before 3, and updates after each pass.",
+                    questions: [
+                        { prompt: "Why use a for loop in Java?", code: "for (...) { ... }", options: ["To repeat code", "To hide a class", "To set a property", "To create a label"], answer: 0 },
+                        { prompt: "How many times does this loop run?", code: "for (int step = 0; step < 3; step++)", options: ["3 times", "2 times", "1 time", "Never"], answer: 0 },
+                        { prompt: "What does step++ do?", code: "step++", options: ["Increase the counter by one", "Create a page", "Stop the code", "Declare a String"], answer: 0 }
+                    ]
+                },
+                {
+                    name: "Method Forge",
+                    icon: "🏰",
+                    summary: "Create reusable Java methods.",
+                    title: "Methods and Reuse",
+                    description: "Methods define reusable logic and return values to the caller.",
+                    code: "public class Main {\n    static String greet(String name) {\n        return \"Hi, \" + name;\n    }\n\n    public static void main(String[] args) {\n        System.out.println(greet(\"Coder\"));\n    }\n}",
+                    note: "A method accepts input through parameters and returns a result.",
+                    questions: [
+                        { prompt: "What is a method parameter?", code: "greet(String name)", options: ["An input value for the method", "A type name", "A comment", "A loop value"], answer: 0 },
+                        { prompt: "What does return do?", code: "return \"Hi\";", options: ["Sends a value back to the caller", "Starts a new class", "Creates HTML", "Deletes a loop"], answer: 0 },
+                        { prompt: "Why use methods?", code: "greet(name)", options: ["To reuse logic", "To hide variables", "To change CSS", "To skip compilation"], answer: 0 }
+                    ]
+                },
+                {
+                    name: "Debug Watch",
+                    icon: "🐛",
+                    summary: "Fix Java compiler and runtime issues.",
+                    title: "Debugging Java",
+                    description: "Use compiler output and runtime checks to fix a problem in Java.",
+                    code: "int score = 10;\nSystem.out.println(score);\n// Inspect variable values while debugging",
+                    note: "Compiler errors and debugging tools reveal the exact source of the issue.",
+                    questions: [
+                        { prompt: "What is debugging?", code: "findBug(); fixBug();", options: ["Finding and correcting a problem", "Moving files", "Writing links", "Creating loops"], answer: 0 },
+                        { prompt: "What should you read when Java reports an error?", code: "error: incompatible types", options: ["The compiler message", "The HTML body", "The CSS color", "The footer text"], answer: 0 },
+                        { prompt: "Why test after fixing?", code: "fix(); test();", options: ["To confirm the issue is solved", "To remove comments", "To hide output", "To start a new class"], answer: 0 }
+                    ]
+                },
+                {
+                    name: "Final Sprint",
+                    icon: "👑",
+                    summary: "Finish the Java quest.",
+                    title: "Complete the Java Challenge",
+                    description: "Combine methods, conditions, loops, and types into one solid solution.",
+                    code: "public class Main {\n    static void guide(boolean[] steps) {\n        for (boolean ready : steps) {\n            if (ready) {\n                System.out.println(\"Move\");\n            }\n        }\n    }\n\n    public static void main(String[] args) {\n        guide(new boolean[] {true, false, true});\n    }\n}",
+                    note: "Strong Java programs are built from small, testable actions working together.",
+                    questions: [
+                        { prompt: "Which Java construct repeats work over data?", code: "for (...) { ... }", options: ["A loop", "A method", "A section", "A label"], answer: 0 },
+                        { prompt: "What does a method usually return?", code: "return result;", options: ["A value", "A CSS rule", "An HTML file", "A loop counter"], answer: 0 },
+                        { prompt: "What is the final best step before completion?", code: "build(); test();", options: ["Test the complete solution", "Delete the code", "Hide the output", "Skip the fix"], answer: 0 }
+                    ]
+                }
+            ]
+        };
+
+        const languageLessons = {
+            Python: [
+                { title: "Variables, Types and Output", description: "A variable is a named reference to a value. Python infers the value's type, and print() displays it.", code: "score = 10\nname = \"Coder\"\nprint(score)\nprint(name)", note: "Names refer to values; strings hold text, integers hold whole numbers, and print() writes output." },
+                { title: "Operators and Decisions", description: "Operators calculate or compare values. An if/else statement runs one indented block based on whether its condition is true.", code: "score = 75\nif score >= 50:\n    print(\"Pass\")\nelse:\n    print(\"Try again\")", note: "Comparison operators such as >= produce True or False, which determines which branch runs." },
+                { title: "Loops and Repetition", description: "A for loop repeats a block once for each item in an iterable; range(3) supplies three numbers.", code: "for step in range(3):\n    print(\"Move forward\")", note: "The indented loop body runs three times because range(3) produces 0, 1 and 2." },
+                { title: "Functions and Reuse", description: "A function is a named, reusable block of code. Parameters receive input, and return sends a result back to the caller.", code: "def greet(name):\n    return \"Hi, \" + name\n\nprint(greet(\"Coder\"))", note: "Calling greet passes a value to name; return gives the completed greeting back to the caller." },
+                { title: "Debugging and Errors", description: "Debugging means reproducing a problem, locating its cause, correcting the code, and testing the change.", code: "score = 10\nprint(score)\n# Check the value shown", note: "A comment starts with # and is ignored by Python; use the output and error message to investigate behavior." },
+                { title: "Build a Complete Solution", description: "Combine variables, conditions, loops and functions to solve a task in small, testable steps.", code: "def guide(steps):\n    for step in steps:\n        if step:\n            print(\"Move\")\n\nguide([True, False, True])", note: "This function loops over a collection and uses a condition to decide which steps to process." }
+            ],
+            C: [
+                { title: "Variables, Types and Output", description: "A variable is a named memory location with a declared type. printf() writes formatted output to the console.", code: "#include <stdio.h>\n\nint main(void) {\n    int score = 10;\n    printf(\"%d\\n\", score);\n    return 0;\n}", note: "C requires a type declaration; int stores whole numbers, and %d formats an int for printf()." },
+                { title: "Operators and Decisions", description: "Operators calculate or compare values. An if/else statement chooses which block to run based on a true or false condition.", code: "#include <stdio.h>\n\nint main(void) {\n    int score = 75;\n    if (score >= 50) {\n        printf(\"Pass\\n\");\n    } else {\n        printf(\"Try again\\n\");\n    }\n}", note: "The comparison >= evaluates to true or false; braces group each branch's statements." },
+                { title: "Loops and Repetition", description: "A loop repeats statements. A for loop has an initializer, a condition and an update expression.", code: "#include <stdio.h>\n\nint main(void) {\n    for (int step = 0; step < 3; step++) {\n        printf(\"Move forward\\n\");\n    }\n}", note: "The loop starts at 0, continues while step < 3, and increments step after each pass." },
+                { title: "Functions and Reuse", description: "A function is a reusable block with a return type, name and optional parameters. Its return statement sends a result to the caller.", code: "#include <stdio.h>\n\nint add(int first, int second) {\n    return first + second;\n}\n\nint main(void) {\n    printf(\"%d\\n\", add(2, 3));\n}", note: "The int parameters receive two values, and the int return type declares the result." },
+                { title: "Debugging and Errors", description: "Debugging means reading compiler diagnostics, checking program behavior, fixing the cause, and compiling and testing again.", code: "#include <stdio.h>\n\nint main(void) {\n    int score = 10;\n    printf(\"%d\\n\", score);\n    return 0;\n}", note: "Compiler messages include a location and clue; verify types, punctuation and the reported line first." },
+                { title: "Build a Complete Solution", description: "Combine typed data, conditions, loops and functions to build a solution that can be checked with known inputs.", code: "#include <stdio.h>\n\nint is_ready(int step) {\n    return step > 0;\n}\n\nint main(void) {\n    for (int step = 0; step < 3; step++) {\n        if (is_ready(step)) printf(\"Move\\n\");\n    }\n}", note: "The function reports whether a step is ready; the loop and condition use that result." }
+            ],
+            HTML: [
+                { title: "Elements, Attributes and Content", description: "HTML is a markup language, not a programming language. Elements describe page content, tags mark their boundaries, and attributes add details.", code: "<h1>My Coding Quest</h1>\n<p class=\"intro\">\n  Learn by building for the web.\n</p>", note: "The h1 element marks the main heading; class is an attribute, and the text is the paragraph's content." },
+                { title: "Page Structure and Semantics", description: "Semantic HTML elements describe the role of page regions, helping browsers, assistive technology and developers understand the document.", code: "<header>\n  <h1>CodeQuest</h1>\n</header>\n<main>\n  <p>Choose a quest.</p>\n</main>\n<footer>Contact</footer>", note: "Use header, main and footer for their meaningful page regions instead of choosing tags only for their appearance." },
+                { title: "Links, Lists and Media", description: "HTML links connect documents, lists group related items, and media elements embed images with text alternatives.", code: "<a href=\"map.html\">Open the quest map</a>\n<ul>\n  <li>Learn</li>\n  <li>Build</li>\n</ul>\n<img src=\"map.png\" alt=\"Quest map\">", note: "The href attribute sets a link destination; descriptive alt text makes an image understandable when it cannot be seen." },
+                { title: "Forms and User Input", description: "HTML forms group controls for collecting user input. Labels identify controls, and input types describe the expected value.", code: "<form>\n  <label for=\"player\">Player name</label>\n  <input id=\"player\" name=\"player\" required>\n  <button type=\"submit\">Start</button>\n</form>", note: "Matching a label's for value to an input's id connects the visible label with that control." },
+                { title: "Inspecting and Fixing Markup", description: "Debugging HTML means finding malformed nesting, missing attributes or accessibility issues, then checking the rendered page and validator output.", code: "<main>\n  <h1>Quest status</h1>\n  <img src=\"badge.png\" alt=\"Quest complete\">\n</main>", note: "Close elements in the right order and provide useful alt text; browser developer tools help inspect the rendered result." },
+                { title: "Build a Complete Web Page", description: "Bring semantic structure, headings, links, lists, images and form controls together to create a clear, usable HTML page.", code: "<!doctype html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"utf-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n    <title>Quest</title>\n  </head>\n  <body>\n    <header><h1>CodeQuest</h1></header>\n    <main><p>Choose your next quest.</p></main>\n  </body>\n</html>", note: "A complete document has a doctype, a language-marked html root, metadata in head and visible content in body." }
+            ],
+            JavaScript: [
+                { title: "Variables, Types and Output", description: "A variable is a named binding to a value. JavaScript uses let for reassigned bindings, const for bindings that stay fixed, and console.log() for console output.", code: "const name = \"Coder\";\nlet score = 10;\nconsole.log(name);\nconsole.log(score);", note: "JavaScript values have types such as string and number; const prevents rebinding, not mutation of an object." },
+                { title: "Operators and Decisions", description: "Operators calculate or compare values. An if/else statement runs a block according to whether its condition evaluates to true.", code: "const score = 75;\nif (score >= 50) {\n  console.log(\"Pass\");\n} else {\n  console.log(\"Try again\");\n}", note: "Use strict comparisons such as === when checking equality; braces enclose each branch." },
+                { title: "Loops and Repetition", description: "A loop repeats a block of code. A for loop updates a counter and checks a condition before each repetition.", code: "for (let step = 0; step < 3; step++) {\n  console.log(\"Move forward\");\n}", note: "The counter starts at 0, stops before 3, and increases by one after each pass." },
+                { title: "Functions and Reuse", description: "A function is a reusable block of code. Parameters receive inputs, and return provides a result to the caller.", code: "function greet(name) {\n  return `Hi, ${name}`;\n}\n\nconsole.log(greet(\"Coder\"));", note: "The name parameter receives the argument; return sends the greeting back to the calling code." },
+                { title: "Debugging and Errors", description: "Debugging means reproducing unexpected behavior, inspecting errors and values, fixing the cause, and testing again.", code: "const score = 10;\nconsole.log(score);\n// Inspect the value in the console", note: "Read the browser console's first error and use a breakpoint or logged value to inspect the relevant code." },
+                { title: "Build a Complete Solution", description: "Combine variables, conditions, loops and functions to solve a task with clear, reusable steps.", code: "function guide(steps) {\n  for (const step of steps) {\n    if (step.ready) {\n      console.log(\"Move\");\n    }\n  }\n}\n\nguide([{ ready: true }]);", note: "The function iterates over an array of objects and checks each object's ready property." }
+            ],
+            Java: [
+                { title: "Variables, Types and Output", description: "A variable is a named location for a value. Java declares each variable's type, and System.out.println() writes a line to the console.", code: "public class Main {\n    public static void main(String[] args) {\n        int score = 10;\n        String name = \"Coder\";\n        System.out.println(score);\n        System.out.println(name);\n    }\n}", note: "int stores whole numbers and String stores text; each declaration gives the variable a type." },
+                { title: "Operators and Decisions", description: "Operators calculate or compare values. An if/else statement selects a block based on whether a boolean condition is true.", code: "int score = 75;\nif (score >= 50) {\n    System.out.println(\"Pass\");\n} else {\n    System.out.println(\"Try again\");\n}", note: "The >= comparison produces a boolean value that determines which branch runs." },
+                { title: "Loops and Repetition", description: "A loop repeats statements. A for loop initializes a counter, tests a condition and updates the counter after each pass.", code: "for (int step = 0; step < 3; step++) {\n    System.out.println(\"Move forward\");\n}", note: "This loop prints three times: step takes the values 0, 1 and 2." },
+                { title: "Methods and Reuse", description: "A method is a named, reusable block in a class. Parameters receive inputs, and a return statement supplies a result of the declared type.", code: "public class Main {\n    static String greet(String name) {\n        return \"Hi, \" + name;\n    }\n\n    public static void main(String[] args) {\n        System.out.println(greet(\"Coder\"));\n    }\n}", note: "The String return type promises a text result, and the String parameter receives the caller's argument." },
+                { title: "Debugging and Errors", description: "Debugging means reading compiler or runtime errors, inspecting program state, correcting the cause, and running tests again.", code: "int score = 10;\nSystem.out.println(score);\n// Inspect the value while debugging", note: "Compiler errors point to code that cannot compile; a debugger can pause execution and inspect variable values." },
+                { title: "Build a Complete Solution", description: "Combine typed data, methods, conditions and loops into a solution, then verify it with representative inputs.", code: "public class Main {\n    static void guide(boolean[] steps) {\n        for (boolean ready : steps) {\n            if (ready) {\n                System.out.println(\"Move\");\n            }\n        }\n    }\n\n    public static void main(String[] args) {\n        guide(new boolean[] {true, false, true});\n    }\n}", note: "The method accepts a boolean array, examines each value and acts only when the step is ready." }
+            ]
+        };
+
+        const level = (levelDataByLanguage[selectedLanguage] || levelDataByLanguage.Python)[currentLevel - 1];
+        const lesson = (languageLessons[selectedLanguage] || languageLessons.Python)[currentLevel - 1];
+        const languageNames = ["Python", "C", "HTML", "JavaScript", "Java"];
+        const languageIndex = languageNames.indexOf(selectedLanguage);
+        const questions = level.questions.map(function(question, questionIndex) {
+            const options = question.options.slice();
+            const correctOption = options.splice(question.answer, 1)[0];
+            const answerIndex =
+                (languageIndex + currentLevel - 1 + questionIndex) % question.options.length;
+            options.splice(answerIndex, 0, correctOption);
+            return Object.assign({}, question, {
+                options: options,
+                answer: answerIndex
+            });
+        });
+        const learningTitle = document.getElementById("learningTitle");
+        const learningDescription = document.getElementById("learningDescription");
+        const learningCode = document.getElementById("learningCode");
+        const learningNote = document.getElementById("learningNote");
+        const syntaxCard = document.getElementById("syntaxCard");
+        const syntaxCardFront = syntaxCard.querySelector(".syntax-card-front");
+        const syntaxCardBack = syntaxCard.querySelector(".syntax-card-back");
+        const syntaxTopic = document.getElementById("syntaxTopic");
+        const syntaxExplanation = document.getElementById("syntaxExplanation");
+        const memoryTimer = document.getElementById("memoryTimer");
+        const memoryTimerContainer = document.querySelector(".memory-timer");
+        const rememberButton = document.getElementById("rememberButton");
+        const flipMessage = document.getElementById("flipMessage");
+        const challengeLabel = document.getElementById("challengeLabel");
+        const challengeQuestion = document.getElementById("challengeQuestion");
+        const challengeCode = document.getElementById("challengeCode");
+        const questionText = document.getElementById("questionText");
+        const answerOptions = document.getElementById("answerOptions");
+        const checkAnswer = document.getElementById("checkAnswer");
+        const answerResult = document.getElementById("answerResult");
+        const challengeCard = document.getElementById("challengeCard");
+        const challengeLock = document.getElementById("challengeLock");
+        const challengeContent = document.getElementById("challengeContent");
+        const xpReward = document.getElementById("xpReward");
+        const nextLevel = document.getElementById("nextLevel");
+        const nextLevelButton = document.getElementById("nextLevelButton");
+        const progressFill = document.getElementById("progressFill");
+        const progressText = document.getElementById("progressText");
+
+        if (!level || currentLevel > completedLevels.length + 1) {
+            window.location.href = "game-map.html";
+        }
+
+        document.title = "Level " + currentLevel + " | CODEQUEST";
+        document.querySelector(".level-title-icon").textContent = level.icon;
+        document.querySelector(".level-label").textContent =
+            "LEVEL " + String(currentLevel).padStart(2, "0");
+        document.querySelector(".level-header h1").textContent = level.name;
+        document.querySelector(".level-header p").textContent =
+            selectedLanguage + " • " + lesson.title;
+        learningTitle.textContent = lesson.title;
+        learningDescription.textContent = lesson.description;
+        learningCode.textContent = lesson.code;
+        learningNote.textContent = lesson.note;
+        syntaxTopic.textContent = selectedLanguage.toUpperCase() + " SYNTAX";
+        syntaxExplanation.textContent = lesson.note;
+
+        let questionIndex = 0;
+        let selectedAnswer = "";
+        let cardFlipped = false;
+        let timerFinished = false;
+        let memoryTime = 15;
+        let memoryInterval = null;
+
+        function renderQuestion() {
+
+            const question = questions[questionIndex];
+
+            challengeLabel.textContent =
+                "🎯 QUESTION " + (questionIndex + 1) + " OF 03";
+            challengeQuestion.textContent =
+                "Quick check: " + lesson.title + ".";
+            challengeCode.textContent = lesson.code;
+            questionText.textContent = question.prompt;
+            answerOptions.innerHTML = "";
+            selectedAnswer = "";
+            answerResult.textContent = "";
+            answerResult.className = "answer-result";
+            checkAnswer.disabled = false;
+
+            question.options.forEach(function(option, index) {
+
+                const button = document.createElement("button");
+                button.className = "answer-option";
+                button.dataset.answer = String(index);
+                const answerLetter = document.createElement("span");
+                answerLetter.textContent = String.fromCharCode(65 + index);
+                button.append(answerLetter, document.createTextNode(option));
+
+                button.addEventListener("click", function() {
+                    answerOptions.querySelectorAll(".answer-option").forEach(function(item) {
+                        item.classList.remove("selected-answer");
+                    });
+                    button.classList.add("selected-answer");
+                    selectedAnswer = button.dataset.answer;
+                });
+
+                answerOptions.appendChild(button);
+
+            });
+
+        }
+
+        async function completeLevel() {
+
+            if (!completedLevels.includes(currentLevel)) {
+                try {
+                    await CodeQuest.api("/api/complete-level", {
+                        method: "POST",
+                        body: JSON.stringify({ level: currentLevel, language: selectedLanguage })
+                    });
+                    completedLevels.push(currentLevel);
+                } catch (error) {
+                    answerResult.textContent = error.message;
+                    answerResult.className = "answer-result show wrong";
+                    return;
+                }
+            }
+
+            progressFill.style.width = "100%";
+            progressText.textContent = "100%";
+            xpReward.classList.add("show");
+            nextLevel.classList.add("show");
+            checkAnswer.disabled = true;
+
+        }
+
+        function unlockChallenge() {
+            challengeCard.classList.remove("locked-challenge");
+            challengeLock.hidden = true;
+            challengeContent.hidden = false;
+            renderQuestion();
+            flipMessage.textContent =
+                "🎯 Challenge unlocked! Show what you learned.";
+            flipMessage.classList.add("success-message");
+            challengeCard.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+
+        syntaxCard.addEventListener("click", function() {
+            if (cardFlipped || timerFinished) {
+                return;
+            }
+
+            cardFlipped = true;
+            syntaxCard.classList.add("flipped");
+            syntaxCard.setAttribute("aria-pressed", "true");
+            syntaxCardFront.setAttribute("aria-hidden", "true");
+            syntaxCardBack.setAttribute("aria-hidden", "false");
+            syntaxCard.disabled = true;
+            memoryTime = 15;
+            memoryTimer.textContent = String(memoryTime);
+            memoryTimerContainer.classList.remove("warning");
+            rememberButton.disabled = true;
+            flipMessage.textContent =
+                "🧠 Memorize the syntax before time runs out!";
+            flipMessage.classList.add("success-message");
+
+            memoryInterval = window.setInterval(function() {
+                memoryTime -= 1;
+                memoryTimer.textContent = String(memoryTime);
+
+                if (memoryTime <= 5) {
+                    memoryTimerContainer.classList.add("warning");
+                }
+
+                if (memoryTime <= 0) {
+                    window.clearInterval(memoryInterval);
+                    memoryInterval = null;
+                    syntaxCard.classList.remove("flipped");
+                    syntaxCard.setAttribute("aria-pressed", "false");
+                    syntaxCardFront.setAttribute("aria-hidden", "false");
+                    syntaxCardBack.setAttribute("aria-hidden", "true");
+                    cardFlipped = false;
+                    timerFinished = true;
+                    rememberButton.disabled = false;
+                    flipMessage.textContent =
+                        "⏰ Time's up! Click “I Remembered” to start the challenge.";
+                    rememberButton.focus();
+                }
+            }, 1000);
+        });
+
+        rememberButton.addEventListener("click", function() {
+            if (!timerFinished) {
+                return;
+            }
+
+            rememberButton.textContent = "✓ Syntax Remembered";
+            rememberButton.classList.add("remembered");
+            rememberButton.disabled = true;
+            unlockChallenge();
+        });
+
+        checkAnswer.addEventListener("click", async function() {
+
+            if (selectedAnswer === "") {
+                answerResult.textContent = "⚠️ Please select an answer first.";
+                answerResult.className = "answer-result show wrong";
+                return;
+            }
+
+            if (Number(selectedAnswer) !== questions[questionIndex].answer) {
+                answerResult.textContent = "❌ Not quite! Try again.";
+                answerResult.className = "answer-result show wrong";
+                return;
+            }
+
+            if (questionIndex < questions.length - 1) {
+                questionIndex += 1;
+                progressFill.style.width = (questionIndex / 3 * 100) + "%";
+                progressText.textContent = Math.round(questionIndex / 3 * 100) + "%";
+                renderQuestion();
+                answerResult.textContent = "✅ Correct! Next question.";
+                answerResult.className = "answer-result show correct";
+                return;
+            }
+
+            answerResult.textContent = "✅ All " + questions.length + " questions are correct!";
+            answerResult.className = "answer-result show correct";
+            answerOptions.querySelectorAll(".answer-option").forEach(function(option) {
+                option.disabled = true;
+            });
+            await completeLevel();
+
+        });
+
+        nextLevelButton.textContent = currentLevel < 6
+            ? "🔐 Unlock Level " + (currentLevel + 1)
+            : "🏆 Return to Quest Map";
+        nextLevel.querySelector("h2").textContent =
+            "🌟 " + level.name + " Completed!";
+        nextLevel.querySelector("p").textContent =
+            currentLevel < 6
+                ? "You mastered this topic. Continue to the next level."
+                : "You completed the CodeQuest adventure.";
+        nextLevelButton.addEventListener("click", function() {
+            window.location.href = "game-map.html";
+        });
+
+        if (completedLevels.includes(currentLevel)) {
+            unlockChallenge();
+            completeLevel();
+        } else {
+            flipMessage.textContent = "Flip the card to start the memory challenge.";
+        }
+
+        })();
+
+    </script>
+
+
+</body>
+
+</html>

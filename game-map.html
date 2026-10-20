@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Quest Map | CODEQUEST</title>
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+    <!-- ============================= -->
+    <!-- NAVIGATION BAR -->
+    <!-- ============================= -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            CODEQUEST
+        </div>
+
+        <div class="nav-links">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="dashboard.html">
+                Dashboard
+            </a>
+
+            <a href="languages.html">
+                Languages
+            </a>
+
+            <a href="/logout">
+                Logout
+            </a>
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- ============================= -->
+    <!-- GAME MAP -->
+    <!-- ============================= -->
+
+    <main class="game-map-page">
+
+
+        <!-- MAP HEADER -->
+
+        <section class="map-header">
+
+            <p class="map-tag">
+                🗺️ YOUR CODING ADVENTURE
+            </p>
+
+            <h1>
+                Quest Map
+            </h1>
+
+            <p>
+                Complete each level and become a
+                <strong>CodeQuest Master.</strong>
+            </p>
+
+        </section>
+
+
+
+        <!-- SELECTED LANGUAGE -->
+
+        <section class="selected-quest">
+
+            <div>
+
+                <span class="quest-label">
+                    CURRENT QUEST
+                </span>
+
+                <h2 id="selectedLanguage">
+                    Loading Quest...
+                </h2>
+
+            </div>
+
+            <div class="quest-xp">
+
+                <span>
+                    XP EARNED
+                </span>
+
+                <strong>
+                    ⭐ 0 XP
+                </strong>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ============================= -->
+        <!-- LEVEL MAP -->
+        <!-- ============================= -->
+
+        <section class="quest-map">
+
+
+            <!-- LEVEL 1 -->
+
+            <div
+                class="level-card completed"
+                data-level="1"
+            >
+
+                <div class="level-number">
+                    01
+                </div>
+
+                <div class="level-icon">
+                    🌱
+                </div>
+
+                <div class="level-content">
+
+                    <span class="level-status">
+                        ✓ COMPLETED
+                    </span>
+
+                    <h2>
+                        The Beginning
+                    </h2>
+
+                    <p>
+                        Learn variables, basic syntax,
+                        data types and output.
+                    </p>
+
+                    <div class="level-reward">
+                        ⭐ +100 XP
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PATH -->
+
+            <div class="map-path">
+                ↓
+            </div>
+
+
+
+            <!-- LEVEL 2 -->
+
+            <div
+                class="level-card completed"
+                data-level="2"
+            >
+
+                <div class="level-number">
+                    02
+                </div>
+
+                <div class="level-icon">
+                    🔐
+                </div>
+
+                <div class="level-content">
+
+                    <span class="level-status">
+                        ✓ COMPLETED
+                    </span>
+
+                    <h2>
+                        The Gate
+                    </h2>
+
+                    <p>
+                        Master operators, conditions
+                        and if/else.
+                    </p>
+
+                    <div class="level-reward">
+                        ⭐ +100 XP
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PATH -->
+
+            <div class="map-path">
+                ↓
+            </div>
+
+
+
+            <!-- LEVEL 3 -->
+
+            <div
+                class="level-card current"
+                data-level="3"
+            >
+
+                <div class="level-number">
+                    03
+                </div>
+
+                <div class="level-icon">
+                    🌲
+                </div>
+
+                <div class="level-content">
+
+                    <span class="level-status">
+                        🎯 CURRENT QUEST
+                    </span>
+
+                    <h2>
+                        The Loop Forest
+                    </h2>
+
+                    <p>
+                        Learn loops and repetition
+                        to guide your character.
+                    </p>
+
+                    <div class="level-reward">
+                        ⭐ +100 XP
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PATH -->
+
+            <div class="map-path">
+                ↓
+            </div>
+
+
+
+            <!-- LEVEL 4 -->
+
+            <div
+                class="level-card locked"
+                data-level="4"
+            >
+
+                <div class="level-number">
+                    04
+                </div>
+
+                <div class="level-icon">
+                    🏰
+                </div>
+
+                <div class="level-content">
+
+                    <span class="level-status">
+                        🔒 LOCKED
+                    </span>
+
+                    <h2>
+                        Function Castle
+                    </h2>
+
+                    <p>
+                        Learn functions, parameters
+                        and return values.
+                    </p>
+
+                    <div class="level-reward">
+                        ⭐ +100 XP
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PATH -->
+
+            <div class="map-path">
+                ↓
+            </div>
+
+
+
+            <!-- LEVEL 5 -->
+
+            <div
+                class="level-card locked"
+                data-level="5"
+            >
+
+                <div class="level-number">
+                    05
+                </div>
+
+                <div class="level-icon">
+                    🐛
+                </div>
+
+                <div class="level-content">
+
+                    <span class="level-status">
+                        🔒 LOCKED
+                    </span>
+
+                    <h2>
+                        Debugging Dungeon
+                    </h2>
+
+                    <p>
+                        Find and fix coding errors
+                        to defeat the Bug Monster.
+                    </p>
+
+                    <div class="level-reward">
+                        ⭐ +100 XP
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PATH -->
+
+            <div class="map-path">
+                ↓
+            </div>
+
+
+
+            <!-- LEVEL 6 -->
+
+            <div
+                class="level-card locked final-level"
+                data-level="6"
+            >
+
+                <div class="level-number">
+                    06
+                </div>
+
+                <div class="level-icon">
+                    👑
+                </div>
+
+                <div class="level-content">
+
+                    <span class="level-status">
+                        🔒 LOCKED
+                    </span>
+
+                    <h2>
+                        Final Challenge
+                    </h2>
+
+                    <p>
+                        Combine everything you've
+                        learned and become the master.
+                    </p>
+
+                    <div class="level-reward">
+                        👑 +100 XP
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ============================= -->
+        <!-- CURRENT MISSION -->
+        <!-- ============================= -->
+
+        <section class="current-mission">
+
+            <div class="mission-icon">
+                🎯
+            </div>
+
+            <div class="mission-content">
+
+                <span>
+                    CURRENT MISSION
+                </span>
+
+                <h2>
+                    Guide the Robot Through the Forest
+                </h2>
+
+                <p>
+                    Complete the Level 3 challenges
+                    and earn <strong>+100 XP</strong>.
+                </p>
+
+            </div>
+
+            <button
+                class="start-level-button"
+                id="startLevelButton"
+            >
+                🚀 Start Level
+            </button>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- ============================= -->
+    <!-- FOOTER -->
+    <!-- ============================= -->
+
+    <footer class="footer">
+
+        <p>
+            © 2026 CODEQUEST.
+            Learn • Code • Play • Progress.
+        </p>
+
+    </footer>
+
+
+
+    <!-- ============================= -->
+    <!-- JAVASCRIPT -->
+    <!-- ============================= -->
+
+    <script src="app.js"></script>
+    <script>
+
+        (async function() {
+        const player = await CodeQuest.requirePlayer();
+        if (!player) return;
+
+        const selectedLanguage = player.language || "Python";
+        const languageTitle = document.getElementById("selectedLanguage");
+        const languageProgress = player.language_progress || {};
+        const completedLevels = languageProgress[selectedLanguage] || [];
+        const nextLevel = Math.min(completedLevels.length + 1, 6);
+        const levelMapByLanguage = {
+            Python: [
+                { name: "The Beginning", icon: "🌱", summary: "Learn variables, basic syntax, data types and output." },
+                { name: "The Gate", icon: "🔐", summary: "Master operators, conditions and if/else." },
+                { name: "The Loop Forest", icon: "🌲", summary: "Learn loops and repetition to guide your character." },
+                { name: "Function Castle", icon: "🏰", summary: "Build reusable functions with parameters and return values." },
+                { name: "Debugging Dungeon", icon: "🐛", summary: "Find and fix coding errors to defeat the bug monster." },
+                { name: "Final Challenge", icon: "👑", summary: "Combine every Python skill to complete the adventure." }
+            ],
+            C: [
+                { name: "Memory Basics", icon: "🧠", summary: "Learn C variables, types and output formatting." },
+                { name: "Decision Gate", icon: "🔐", summary: "Use comparisons and branching in C." },
+                { name: "Loop Trail", icon: "🌲", summary: "Repeat code with for loops and control flow." },
+                { name: "Function Forge", icon: "🏰", summary: "Write reusable C functions with parameters and return values." },
+                { name: "Bug Watch", icon: "🐛", summary: "Read compiler feedback and fix coding issues." },
+                { name: "Final Sprint", icon: "👑", summary: "Complete the C challenge with all core concepts." }
+            ],
+            HTML: [
+                { name: "Tag Start", icon: "🌐", summary: "Learn HTML elements, attributes and page content." },
+                { name: "Structure Map", icon: "🧭", summary: "Use semantic sections to organize a clean page." },
+                { name: "Linking Path", icon: "🔗", summary: "Connect pages with links, lists and media." },
+                { name: "Form Entry", icon: "📝", summary: "Collect user input with clear labels and controls." },
+                { name: "Markup Debug", icon: "🐛", summary: "Inspect markup and fix accessibility and structure issues." },
+                { name: "Full Web Build", icon: "👑", summary: "Design a complete, polished HTML document." }
+            ],
+            JavaScript: [
+                { name: "Value Vault", icon: "📦", summary: "Store values in variables and print them to the console." },
+                { name: "Decision Path", icon: "🔐", summary: "Use if/else logic to control program flow." },
+                { name: "Loop Trail", icon: "🌲", summary: "Repeat work with JavaScript loops and counters." },
+                { name: "Function Forge", icon: "🏰", summary: "Create reusable functions with parameters and return values." },
+                { name: "Bug Watch", icon: "🐛", summary: "Debug JavaScript errors in the browser console." },
+                { name: "Final Quest", icon: "👑", summary: "Solve the full JavaScript challenge with all core skills." }
+            ],
+            Java: [
+                { name: "Type Start", icon: "☕", summary: "Learn Java variables, types and console output." },
+                { name: "Decision Gate", icon: "🔐", summary: "Use conditions and branches in Java programs." },
+                { name: "Loop Path", icon: "🌲", summary: "Repeat actions with for loops and counters." },
+                { name: "Method Forge", icon: "🏰", summary: "Create reusable methods with parameters and return values." },
+                { name: "Debug Watch", icon: "🐛", summary: "Fix compile-time and runtime Java issues." },
+                { name: "Final Sprint", icon: "👑", summary: "Complete the Java challenge with all fundamentals." }
+            ]
+        };
+        const selectedLanguageMap = levelMapByLanguage[selectedLanguage] || levelMapByLanguage.Python;
+
+        document.querySelector(".quest-xp strong").textContent =
+            "⭐ " + player.xp + " XP";
+
+        languageTitle.textContent = selectedLanguage
+            ? selectedLanguage + " Quest"
+            : "Coding Quest";
+
+        if (selectedLanguage === "HTML") {
+            const htmlLevelDescriptions = [
+                "Learn HTML elements, attributes and text content.",
+                "Use semantic elements to organize a complete page.",
+                "Add links, lists and images with accessible text.",
+                "Build forms with labeled controls and validation.",
+                "Inspect markup, fix nesting and improve accessibility.",
+                "Combine document structure and semantic content into a full page."
+            ];
+
+            document.querySelectorAll(".level-content p").forEach(function(description, index) {
+                description.textContent = htmlLevelDescriptions[index];
+            });
+
+        }
+
+        const missionTitles = selectedLanguage === "HTML"
+            ? [
+                "Explore elements and attributes",
+                "Structure a semantic page",
+                "Connect content with links and media",
+                "Create an accessible form",
+                "Inspect and repair HTML",
+                "Build a complete web page"
+            ]
+            : [
+                "Learn variables, types and output",
+                "Open the gate with conditions",
+                "Guide the robot through the loop forest",
+                "Build reusable functions",
+                "Debug the broken code",
+                "Solve the final coding challenge"
+            ];
+
+        const currentMissionTitle = selectedLanguageMap[Math.max(0, nextLevel - 1)]?.name || "Start your quest";
+
+        document.querySelector(".mission-content h2").textContent =
+            currentMissionTitle;
+        document.querySelector(".mission-content p").innerHTML =
+            "Complete the Level " + nextLevel + " challenges and earn <strong>+100 XP</strong>.";
+
+        const levelCards = document.querySelectorAll(".level-card");
+
+        levelCards.forEach(function(levelCard, index) {
+
+            const levelNumber = index + 1;
+            const levelMeta = selectedLanguageMap[index] || selectedLanguageMap[0];
+            const isCompleted = completedLevels.includes(levelNumber);
+            const isAccessible = levelNumber <= nextLevel;
+
+            levelCard.querySelector(".level-icon").textContent = levelMeta.icon;
+            levelCard.querySelector("h2").textContent = levelMeta.name;
+            levelCard.querySelector("p").textContent = levelMeta.summary;
+
+            levelCard.classList.remove("completed", "current", "locked");
+            levelCard.classList.add(
+                isCompleted
+                    ? "completed"
+                    : isAccessible
+                        ? "current"
+                        : "locked"
+            );
+
+            levelCard.querySelector(".level-status").textContent =
+                isCompleted
+                    ? "✓ COMPLETED"
+                    : isAccessible
+                        ? "🎯 CURRENT QUEST"
+                        : "🔒 LOCKED";
+
+            levelCard.addEventListener("click", function() {
+
+                if (!isAccessible) {
+                    alert("🔒 Complete the previous level to unlock this quest!");
+                    return;
+                }
+
+                window.location.href = "level.html?level=" + levelNumber;
+
+            });
+
+        });
+
+        document.getElementById("startLevelButton").addEventListener(
+            "click",
+            function() {
+                window.location.href = "level.html?level=" +
+                    Math.min(nextLevel, 6);
+            }
+        );
+
+        })();
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Choose Language | CODEQUEST</title>
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Programming Language Logos -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+    >
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+
+        <div class="logo">
+            CODEQUEST
+        </div>
+
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="languages.html" class="active">Languages</a>
+            <a href="/logout">Logout</a>
+        </div>
+
+    </nav>
+
+
+    <!-- Language Selection Page -->
+    <main class="language-page">
+
+        <!-- Header -->
+        <section class="language-header">
+
+            <p class="dashboard-tag">
+                🎮 CHOOSE YOUR LANGUAGE
+            </p>
+
+            <h1>
+                Select Your Coding Adventure
+            </h1>
+
+            <p>
+                Choose a programming language and begin your quest.
+            </p>
+
+            <div class="language-divider">
+                <span></span>
+                <b>◆</b>
+                <span></span>
+            </div>
+
+        </section>
+
+
+        <!-- Hexagon Language Tiles -->
+        <section class="language-selection">
+
+
+            <!-- PYTHON -->
+            <div class="language-card python-card" data-language="Python">
+
+                <div class="hexagon-inner">
+
+                    <div class="language-icon python-logo">
+                        <i class="devicon-python-plain"></i>
+                    </div>
+
+                    <h2>Python</h2>
+
+                    <p>
+                        Learn simple and powerful programming
+                        concepts with Python.
+                    </p>
+
+                    <span class="language-level">
+                        Beginner Friendly
+                    </span>
+
+                </div>
+
+            </div>
+
+
+           <!-- C -->
+<div class="language-card c-card" data-language="C">
+
+    <div class="hexagon-inner">
+
+        <div class="language-icon c-logo">
+    <span class="c-logo-mark">C</span>
+</div>
+
+        <h2>C</h2>
+
+        <p>
+            Build a strong programming foundation
+            with C.
+        </p>
+
+        <span class="language-level">
+            Core Programming
+        </span>
+
+    </div>
+
+</div>
+
+
+            <!-- HTML -->
+            <div class="language-card html-card" data-language="HTML">
+
+                <div class="hexagon-inner">
+
+                    <div class="language-icon html-logo">
+                        <i class="devicon-html5-plain"></i>
+                    </div>
+
+                    <h2>HTML</h2>
+
+                    <p>
+                        Learn how websites are structured
+                        using HTML.
+                    </p>
+
+                    <span class="language-level">
+                        Web Development
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- JAVASCRIPT -->
+            <div
+                class="language-card javascript-card"
+                data-language="JavaScript"
+            >
+
+                <div class="hexagon-inner">
+
+                    <div class="language-icon javascript-logo">
+                        <i class="devicon-javascript-plain"></i>
+                    </div>
+
+                    <h2>JavaScript</h2>
+
+                    <p>
+                        Make websites interactive and dynamic
+                        with JavaScript.
+                    </p>
+
+                    <span class="language-level">
+                        Web Development
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- JAVA -->
+            <div class="language-card java-card" data-language="Java">
+
+                <div class="hexagon-inner">
+
+                    <div class="language-icon java-logo">
+                        <i class="devicon-java-plain"></i>
+                    </div>
+
+                    <h2>Java</h2>
+
+                    <p>
+                        Explore object-oriented programming
+                        with Java.
+                    </p>
+
+                    <span class="language-level">
+                        Object Oriented
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Selected Language -->
+        <section class="selected-language">
+
+            <p>
+                Selected Language:
+                <strong id="selectedLanguage">None</strong>
+            </p>
+
+            <button
+                type="button"
+                id="continueButton"
+                class="continue-language-button"
+                disabled
+            >
+                🚀 Continue Quest
+            </button>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+
+        <p>
+            © 2026 CODEQUEST. Learn • Code • Play • Progress.
+        </p>
+
+    </footer>
+
+
+    <!-- Language Selection Script -->
+    <script src="app.js"></script>
+    <script>
+
+        const languageCards =
+            document.querySelectorAll(".language-card");
+
+        const selectedLanguage =
+            document.getElementById("selectedLanguage");
+
+        const continueButton =
+            document.getElementById("continueButton");
+
+        let selected = "";
+
+        CodeQuest.currentPlayer().then(function(player) {
+            if (player && player.language) {
+                selected = player.language;
+                selectedLanguage.textContent = selected;
+                continueButton.disabled = false;
+                languageCards.forEach(function(card) {
+                    card.classList.toggle("selected", card.dataset.language === selected);
+                });
+            }
+        });
+
+
+        languageCards.forEach(card => {
+
+            card.addEventListener("click", function () {
+
+                languageCards.forEach(item => {
+                    item.classList.remove("selected");
+                });
+
+                this.classList.add("selected");
+
+                selected = this.dataset.language;
+
+                selectedLanguage.textContent = selected;
+
+                continueButton.disabled = false;
+
+            });
+
+        });
+
+
+        continueButton.addEventListener("click", function () {
+
+            if (selected !== "") {
+
+                CodeQuest.api("/api/language", {
+                    method: "POST",
+                    body: JSON.stringify({ language: selected })
+                }).then(function() {
+                    window.location.href = "game-map.html";
+                }).catch(function(error) {
+                    alert(error.message);
+                });
+
+            }
+
+        });
+
+    </script>
+
+</body>
+
+</html>
