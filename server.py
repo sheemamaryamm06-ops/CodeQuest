@@ -1,108 +1,96 @@
-                    connection.execute(
-                        "INSERT INTO players (username, password_hash, password_salt, created_at) "
-                        "VALUES (?, ?, ?, ?)",
-                        (username, password_hash, salt, int(time.time())),
-                    )
-            except sqlite3.IntegrityError:
-                self.respond_json(409, {"error": "That username is already taken."})
-                return
-            self.respond_json(201, {"message": "Account created."})
-            return
-
-        if path == "/api/login":
-            username = str(data.get("username", "")).strip()
-            password = data.get("password", "")
-            with connect_database() as connection:
-                player = connection.execute(
-                    "SELECT id, password_hash, password_salt FROM players WHERE username = ?",
-                    (username,),
-                ).fetchone()
-                if not player or not isinstance(password, str):
-                    self.respond_json(401, {"error": "Incorrect username or password."})
-                    return
-                _, password_hash = hash_password(password, player["password_salt"])
-                if not secrets.compare_digest(password_hash, player["password_hash"]):
-                    self.respond_json(401, {"error": "Incorrect username or password."})
-                    return
-                cookie = self.issue_session(player["id"], connection)
-                state = player_state(connection, player["id"])
-            self.respond_json(200, state, [cookie])
-            return
-
-        if path == "/api/language":
-            with connect_database() as connection:
-                player_id = self.session_player_id(connection)
-                if player_id is None:
-                    self.respond_json(401, {"error": "Please log in to continue."})
-                    return
-                language = data.get("language")
-                if language not in LANGUAGES:
-                    self.respond_json(400, {"error": "Choose a supported language."})
-                    return
-                connection.execute(
-                    "UPDATE players SET language = ? WHERE id = ?", (language, player_id)
-                )
-                state = player_state(connection, player_id, language=language)
-            self.respond_json(200, state)
-            return
-
-        if path == "/api/complete-level":
-            with connect_database() as connection:
-                player_id = self.session_player_id(connection)
-                if player_id is None:
-                    self.respond_json(401, {"error": "Please log in to continue."})
-                    return
-                player = connection.execute(
-                    "SELECT language FROM players WHERE id = ?", (player_id,)
-                ).fetchone()
-                selected_language = data.get("language") or (player["language"] if player else None) or "Python"
-                if selected_language not in LANGUAGES:
-                    self.respond_json(400, {"error": "Choose a supported language."})
-                    return
-                level = data.get("level")
-                if not isinstance(level, int) or isinstance(level, bool) or not 1 <= level <= 6:
-                    self.respond_json(400, {"error": "Level must be between 1 and 6."})
-                    return
-                completed = {
-                    row["level"]
-                    for row in connection.execute(
-                        "SELECT level FROM language_progress WHERE player_id = ? AND language = ? ORDER BY level",
-                        (player_id, selected_language),
-                    )
-                }
-                next_level = min(len(completed) + 1, 6)
-                if level not in completed and level != next_level:
-                    self.respond_json(403, {"error": "Complete the previous level first."})
-                    return
-                connection.execute(
-                    "INSERT OR IGNORE INTO language_progress (player_id, language, level, completed_at) VALUES (?, ?, ?, ?)",
-                    (player_id, selected_language, level, int(time.time())),
-                )
-                state = player_state(connection, player_id, language=selected_language)
-            self.respond_json(200, state)
-            return
-
-        self.respond_json(404, {"error": "Endpoint not found."})
-
-    def log_message(self, format, *args):
-        if os.environ.get("CODEQUEST_ACCESS_LOG") == "1":
-            super().log_message(format, *args)
+import hashlib
+import json
+import os
+import secrets
+import sqlite3
+import time
+from contextlib import contextmanager
+from http import cookies
+from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
+from pathlib import Path
+from urllib.parse import urlparse
 
 
+BASE_DIR = Path(__file__).resolve().parent
+DATABASE_PATH = Path(os.environ.get("CODEQUEST_DB", BASE_DIR / "codequest.sqlite3"))
+SESSION_COOKIE = "codequest_session"
+SESSION_LIFETIME = 60 * 60 * 24 * 30
+LANGUAGES = ("Python", "C", "HTML", "JavaScript", "Java")
 
-def main():
-    initialize_database()
-    port = int(os.environ.get("PORT", "8000"))
-    server = ThreadingHTTPServer(("0.0.0.0", port), CodeQuestHandler)
-    print(f"CodeQuest server running on port {port}")
+
+@contextmanager
+def connect_database():
+    connection = sqlite3.connect(DATABASE_PATH)
+    connection.row_factory = sqlite3.Row
+    connection.execute("PRAGMA foreign_keys = ON")
     try:
-        server.serve_forever()
-    except KeyboardInterrupt:
-        print("\nStopping CodeQuest.")
+        yield connection
+        connection.commit()
+    except Exception:
+        connection.rollback()
+        raise
     finally:
-        server.server_close()
+        connection.close()
 
 
-if __name__ == "__main__":
-    main()
+def initialize_database():
+    DATABASE_PATH.parent.mkdir(parents=True, exist_ok=True)
+    with connect_database() as connection:
+        connection.executescript(
+            """
+            CREATE TABLE IF NOT EXISTS players (
+                id INTEGER PRIMARY KEY,
+                username TEXT NOT NULL UNIQUE COLLATE NOCASE,
+                password_hash TEXT NOT NULL,
+                password_salt TEXT NOT NULL,
+                language TEXT,
+                created_at INTEGER NOT NULL
+            );
+            CREATE TABLE IF NOT EXISTS completed_levels (
+                player_id INTEGER NOT NULL REFERENCES players(id) ON DELETE CASCADE,
+                level INTEGER NOT NULL CHECK (level BETWEEN 1 AND 6),
+                completed_at INTEGER NOT NULL,
+                PRIMARY KEY (player_id, level)
+            );
+            CREATE TABLE IF NOT EXISTS language_progress (
+                player_id INTEGER NOT NULL REFERENCES players(id) ON DELETE CASCADE,
+                language TEXT NOT NULL,
+                level INTEGER NOT NULL CHECK (level BETWEEN 1 AND 6),
+                completed_at INTEGER NOT NULL,
+                PRIMARY KEY (player_id, language, level)
+            );
+            CREATE TABLE IF NOT EXISTS sessions (
+                token_hash TEXT PRIMARY KEY,
+                player_id INTEGER NOT NULL REFERENCES players(id) ON DELETE CASCADE,
+                expires_at INTEGER NOT NULL
+            );
+            """
+        )
 
+        legacy_rows = connection.execute(
+            "SELECT player_id, level FROM completed_levels ORDER BY player_id, level"
+        ).fetchall()
+        for row in legacy_rows:
+            player = connection.execute(
+                "SELECT language FROM players WHERE id = ?",
+                (row["player_id"],),
+            ).fetchone()
+            language = player["language"] if player and player["language"] in LANGUAGES else "Python"
+            connection.execute(
+                "INSERT OR IGNORE INTO language_progress (player_id, language, level, completed_at) VALUES (?, ?, ?, ?)",
+                (row["player_id"], language, row["level"], int(time.time())),
+            )
+
+
+def hash_password(password, salt=None):
+    salt = salt or secrets.token_hex(16)
+    password_hash = hashlib.pbkdf2_hmac(
+        "sha256", password.encode("utf-8"), bytes.fromhex(salt), 310_000
+    ).hex()
+    return salt, password_hash
+
+
+def player_progress_by_language(connection, player_id):
+    progress = {language: [] for language in LANGUAGES}
+    for row in connection.execute(
+        "SELECT language, level FROM language_progress WHERE player_id = ? ORDER BY language, level",
