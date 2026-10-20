@@ -316,8 +316,9 @@ class CodeQuestHandler(SimpleHTTPRequestHandler):
 
 def main():
     initialize_database()
-    server = ThreadingHTTPServer(("127.0.0.1", 8000), CodeQuestHandler)
-    print("CodeQuest is running at http://127.0.0.1:8000")
+   port = int(os.environ.get("PORT", "8000"))
+server = ThreadingHTTPServer(("0.0.0.0", port), CodeQuestHandler)
+    print("CodeQuest is running at port")
     try:
         server.serve_forever()
     except KeyboardInterrupt:
